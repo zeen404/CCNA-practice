@@ -3,54 +3,54 @@
 This repository contains Packet Tracer lab files (.pka) for CCNA 200-301 preparation.
 
 ## Labs Included:
-- LAB-X10 Inter VLAN with Router_.pka
-- LAB-X11 InterVLAN with SWL3_.pka
-- LAB-X12 Per-VLAN STP_.pka
-- LAB-X13 Rapid Per-VLAN STP_.pka
-- LAB-X14 L2 Loop Test_.pka
-- LAB-X15 L2 EtherChannel_.pka
-- LAB-X15 L2 EtherChannel_Test_F01.pka
-- LAB-X16 Port-Security_.pka
-- LAB-X17 HDLC and PPP_.pka
-- LAB-X18 PPP PAP_.pka
-- LAB-X19 PPP CHAP_.pka
-- LAB-X1 BasicConfiguration_.pka
-- LAB-X20 Static Route and Default Route_.pka
-- LAB-X21 OSPF Single Area_.pka
-- LAB-X22 OSPF Multi-Area_.pka
-- LAB-X23 OSPF Summarization_.pka
-- LAB-X24 OSPF Default-information Originate_.pka
-- LAB-X25 OSPF Authentication_.pka
-- LAB-X26 OSPF Path Optimization_.pka
-- LAB-X27 IPv6 OSPF Routing_.pka
-- LAB-X28 EIGRP_.pka
-- LAB-X29 EIGRP Summarization_.pka
-- LAB-X2 Recovery Password_.pka
-- LAB-X30 EIGRP Authentication_.pka
-- LAB-X31 EIGRP Path Optimization_.pka
-- LAB-X32 EIGRP Unequalcost Loadbalance_.pka
-- LAB-X33 IPv6 EIGRP Routing_.pka
-- LAB-X34 Numbered ACL_.pka
-- LAB-X35 Named ACL_.pka
-- LAB-X36 Add Remark ACL_.pka
-- LAB-X37 Static NAT_.pka
-- LAB-X38 Dynamic NAT_.pka
-- LAB-X39 NAT Overloading_.pka
-- LAB-X3 Backup Configuration_.pka
-- LAB-X40 DHCP Server with Cisco IOS_.pka
-- LAB-X41 DHCP Relay_.pka
-- LAB-X42 NTP with Authentication_.pka
-- LAB-X43 Syslog_.pka
-- LAB-X44 HSRP on Router_.pka
-- LAB-X45 HSRP on Switch L3_.pka
-- LAB-X46 SNMP using MIB Browser.pka
-- LAB-X47 Netflow_.pka
-- LAB-X48 GRE Tunneling_.pka
-- LAB-X49 Site-to-Site IPSec VPN_.pka
-- LAB-X4 CDP_.pka
-- LAB-X50 Remote Access IPSec VPN_.pka
-- LAB-X5 Switching Operation_.pka
-- LAB-X6 VLAN and Trunk_.pka
-- LAB-X7 Trunk Allow VLAN_.pka
-- LAB-X8 Trunk Native VLAN_.pka
-- LAB-X9 DTP_.pka
+- [x] LAB-X1 BasicConfiguration_.pka
+- [x] LAB-X2 Recovery Password_.pka
+- [x] LAB-X3 Backup Configuration_.pka
+- [x] LAB-X4 CDP_.pka
+- [x] LAB-X5 Switching Operation_.pka
+- [x] LAB-X6 VLAN and Trunk_.pka
+- [x] LAB-X7 Trunk Allow VLAN_.pka
+- [x] LAB-X8 Trunk Native VLAN_.pka
+- [x] LAB-X9 DTP_.pka
+- [x] LAB-X10 Inter VLAN with Router_.pka
+- [x] LAB-X11 InterVLAN with SWL3_.pka
+- [x] LAB-X12 Per-VLAN STP_.pka
+- [x] LAB-X13 Rapid Per-VLAN STP_.pka
+- [x] LAB-X14 L2 Loop Test_.pka
+- [ ] LAB-X15 L2 EtherChannel_.pka
+- [ ] LAB-X15 L2 EtherChannel_Test_F01.pka
+- [ ] LAB-X16 Port-Security_.pka
+- [ ] LAB-X17 HDLC and PPP_.pka
+- [ ] LAB-X18 PPP PAP_.pka
+- [ ] LAB-X19 PPP CHAP_.pka
+- [ ] LAB-X20 Static Route and Default Route_.pka
+- [ ] LAB-X21 OSPF Single Area_.pka
+- [ ] LAB-X22 OSPF Multi-Area_.pka
+- [ ] LAB-X23 OSPF Summarization_.pka
+- [ ] LAB-X24 OSPF Default-information Originate_.pka
+- [ ] LAB-X25 OSPF Authentication_.pka
+- [ ] LAB-X26 OSPF Path Optimization_.pka
+- [ ] LAB-X27 IPv6 OSPF Routing_.pka
+- [ ] LAB-X28 EIGRP_.pka
+- [ ] LAB-X29 EIGRP Summarization_.pka
+- [ ] LAB-X30 EIGRP Authentication_.pka
+- [ ] LAB-X31 EIGRP Path Optimization_.pka
+- [ ] LAB-X32 EIGRP Unequalcost Loadbalance_.pka
+- [ ] LAB-X33 IPv6 EIGRP Routing_.pka
+- [ ] LAB-X34 Numbered ACL_.pka
+- [ ] LAB-X35 Named ACL_.pka
+- [ ] LAB-X36 Add Remark ACL_.pka
+- [ ] LAB-X37 Static NAT_.pka
+- [ ] LAB-X38 Dynamic NAT_.pka
+- [ ] LAB-X39 NAT Overloading_.pka
+- [ ] LAB-X40 DHCP Server with Cisco IOS_.pka
+- [ ] LAB-X41 DHCP Relay_.pka
+- [ ] LAB-X42 NTP with Authentication_.pka
+- [ ] LAB-X43 Syslog_.pka
+- [ ] LAB-X44 HSRP on Router_.pka
+- [ ] LAB-X45 HSRP on Switch L3_.pka
+- [ ] LAB-X46 SNMP using MIB Browser.pka
+- [ ] LAB-X47 Netflow_.pka
+- [ ] LAB-X48 GRE Tunneling_.pka
+- [ ] LAB-X49 Site-to-Site IPSec VPN_.pka
+- [ ] LAB-X50 Remote Access IPSec VPN_.pka
