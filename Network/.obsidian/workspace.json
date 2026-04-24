@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6426a33a6cb60a3c",
+        "id": "e56dc8c814d4b960",
         "type": "tabs",
         "children": [
           {
-            "id": "bb730656ff363f05",
+            "id": "f5995f1a6ba1a097",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Simulate/Form @CCNA Homework LAB-X01.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Form @CCNA Homework LAB-X01"
+              "title": "New tab"
             }
           }
         ]
@@ -78,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 220.5
   },
   "right": {
     "id": "9a08b5607722173c",
@@ -112,11 +108,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "OSI model.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from OSI model"
             }
           },
           {
@@ -154,13 +151,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline"
             }
           },
           {
@@ -169,17 +165,15 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 352.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,10 +188,25 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7b863dcd592d7737",
+  "active": "4cf32025eb568cdb",
   "lastOpenFiles": [
+    "Untitled.base",
+    "Untitled.canvas",
+    "OSI model.canvas",
+    "CCNA/Image/Pasted image 20260424153009.png",
+    "Simulate/Form @CCNA Homework LAB-X05.md",
+    "Simulate/Form @CCNA Homework LAB-X04.md",
+    "Simulate/Form @CCNA Homework LAB-X03.md",
     "Simulate/Form @CCNA Homework LAB-X02.md",
     "Simulate/Form @CCNA Homework LAB-X01.md",
+    "Homework.canvas",
+    "2026-04-24.md",
+    "CCNA/Image/Pasted image 20260424143836.jpg",
+    "Network/CCNA/Network Layers.md",
+    "CCNA/Network Layers.md",
+    "Network/CCNA",
+    "Network",
+    "Untitled.md",
     "Simulate/Form @CCNA Homework LAB-X10.md",
     "Simulate/Image/Pasted image 20260424135425.png",
     "Simulate/Image/Pasted image 20260424135824.png",
@@ -210,20 +219,12 @@
     "Simulate/Image/Pasted image 20260424134353.png",
     "Simulate/Form @CCNA Homework LAB-X08.md",
     "Simulate/Form @CCNA Homework LAB-X07.md",
-    "Simulate/Image/Pasted image 20260424132807.png",
-    "Simulate/Image/Pasted image 20260424133000.png",
     "Simulate/Form @CCNA Homework LAB-X06.md",
-    "Untitled.canvas",
-    "Simulate/Form @CCNA Homework LAB-X05.md",
-    "Simulate/Form @CCNA Homework LAB-X04.md",
-    "Simulate/Form @CCNA Homework LAB-X03.md",
     "Simulate/Form @CCNA Homework.md",
     "CCNA/Image",
     "Simulate/Image",
     "CCNA/Data Frame.md",
-    "CCNA/Network Layers.md",
     "Simulate",
-    "Untitled.base",
     "CCNA",
     "Welcome.md",
     "create a link.md"

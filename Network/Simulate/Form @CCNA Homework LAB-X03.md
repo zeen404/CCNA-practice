@@ -1,24 +1,29 @@
-# CCNA Homework LAB-X03
+# CCNA Homework LAB-X03: Backup Configuration
 
 **รูปที่ 1:** การสำรองไฟล์การตั้งค่าไปยัง TFTP Server
 ![[Pasted image 20260424104830.png]]
 
-> [!note] 📤 การสำรองไฟล์การตั้งค่าไปยัง TFTP Server
-> เป็นการใช้คำสั่ง `copy running-config tftp:` เพื่อส่งไฟล์การตั้งค่าปัจจุบันจาก Router ไปเก็บไว้ที่ TFTP Server (หมายเลข IP 192.168.1.100) โดยตั้งชื่อไฟล์ปลายทางว่า `RT-GW-config`
-
 **รูปที่ 2:** การล้างค่าคอนฟิกและการ Restart เครื่อง
 ![[Pasted image 20260424104846.png]]
-
-> [!warning] 🗑️ การล้างค่าคอนฟิกและการ Restart เครื่อง
-> แสดงการใช้คำสั่ง `erase startup-config` เพื่อลบไฟล์การตั้งค่าที่อยู่ใน NVRAM (เปรียบเสมือนการคืนค่าโรงงาน) จากนั้นใช้คำสั่ง `reload` เพื่อทำการเริ่มระบบใหม่ ซึ่งจะทำให้ Router กลับไปเป็นค่าเริ่มต้นที่ไม่มีการตั้งค่าใดๆ
 
 **รูปที่ 3:** กระบวนการกู้คืนไฟล์การตั้งค่าจาก TFTP Server
 ![[Pasted image 20260424104935.png]]
 
-> [!success] 📥 กระบวนการกู้คืนไฟล์การตั้งค่าจาก TFTP Server
-> ขั้นตอนการนำไฟล์ที่สำรองไว้กลับมาใช้งาน:
-> 1. ตั้งค่า IP Address ให้กับ Interface (fa0/0) เพื่อให้ Router สามารถสื่อสารกับ TFTP Server ได้
-> 2. ทดสอบการเชื่อมต่อด้วยคำสั่ง `ping 192.168.1.100`
-> 3. ใช้คำสั่ง `copy tftp: running-config` เพื่อดาวน์โหลดไฟล์ `RT-GW-config` กลับมาไว้ที่เครื่อง ซึ่งจะเห็นว่าชื่อ hostname เปลี่ยนจาก `Router` กลับมาเป็น `RT-GW` ทันทีหลังจากโหลดเสร็จ
+---
 
-[[Form @CCNA Homework LAB-X04]]
+## 🧠 Technical Deep Dive: Why & How?
+
+### 1. Backup Strategy (External Storage)
+- **Why:** NVRAM บนอุปกรณ์มีพื้นที่จำกัดและอุปกรณ์อาจพังได้ (Hardware Failure) การเก็บไฟล์คอนฟิกไว้ข้างนอก (Off-box storage) จึงจำเป็นสำหรับการกู้ระบบแบบรวดเร็ว
+- **How:** ใช้โปรโตคอล **TFTP (Trivial File Transfer Protocol)** ซึ่งเน้นความเรียบง่ายและกินทรัพยากรต่ำมาก เหมาะสำหรับอุปกรณ์ขนาดเล็กที่ไม่มี OS ใหญ่โต
+
+### 2. Factory Reset Mechanism
+- **Mechanism:** คำสั่ง `erase startup-config` จะทำการล้าง Header ของ NVRAM ทำให้ระบบมองไม่เห็นไฟล์คอนฟิกเดิม เมื่อสั่ง `reload` ตัว Router จะเริ่มกระบวนการ "Setup Dialogue" ใหม่เพราะถือว่ายังไม่มีการตั้งค่า
+
+### 📨 Packet Flow
+- **TFTP Interaction:**
+    1. **UDP Port 69:** Router ส่ง Packet คำขอเขียนไฟล์ (Write Request) ไปที่ TFTP Server
+    2. **Fragmentation:** ไฟล์คอนฟิกจะถูกหั่นเป็นบล็อก บล็อกละ **512 Bytes**
+    3. **Reliability:** แม้ใช้ UDP แต่ TFTP มีการควบคุมความถูกต้องเอง โดยถ้าส่งไปแล้ว Server ไม่ตอบกลับ ACK (Acknowledgment) ภายในเวลาที่กำหนด Router จะส่งบล็อกเดิมซ้ำอีกครั้ง
+    4. **Completion:** เมื่อได้รับไฟล์ขนาดน้อยกว่า 512 bytes จะถือว่าสิ้นสุดการส่ง
+- **ARP Request:** ก่อนการส่ง TFTP ครั้งแรก Router จะส่ง **ARP Broadcast** เพื่อถามหา MAC Address ของ TFTP Server เสมอ

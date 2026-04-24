@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"node-layer-7","type":"text","text":"## Layer 7: Application\n**Data:** Data / Message\n**Functions:** HTTP, FTP, DNS, SMTP\nClosest to the user.","x":0,"y":50,"width":300,"height":170,"color":"1"},
+		{"id":"node-layer-6","type":"text","text":"## Layer 6: Presentation\n**Data:** Data / Message\n**Functions:** Encryption (SSL/TLS), Compression, Format Conversion (JPEG, MP4).","x":0,"y":250,"width":300,"height":170,"color":"1"},
+		{"id":"node-layer-5","type":"text","text":"## Layer 5: Session\n**Data:** Data / Message\n**Functions:** Manage connections (Sessions), NetBIOS, RPC.","x":0,"y":450,"width":300,"height":170,"color":"1"},
+		{"id":"node-layer-4","type":"text","text":"## Layer 4: Transport\n**Data:** Segment (TCP) / Datagram (UDP)\n**Functions:** Flow Control, Error Checking, Ports.","x":0,"y":650,"width":300,"height":170,"color":"2"},
+		{"id":"node-layer-3","type":"text","text":"## Layer 3: Network\n**Data:** Packet\n**Functions:** Routing, IP Addressing.\n**Device:** Router","x":0,"y":850,"width":300,"height":150,"color":"3"},
+		{"id":"node-layer-2","type":"text","text":"## Layer 2: Data Link\n**Data:** Frame\n**Functions:** MAC Addressing, Error Checking (FCS).\n**Device:** Switch","x":0,"y":1050,"width":300,"height":170,"color":"4"},
+		{"id":"node-layer-1","type":"text","text":"## Layer 1: Physical\n**Data:** Bits\n**Functions:** Electrical signals, Fiber pulses, Wi-Fi waves.\n**Device:** Hub, Cables","x":0,"y":1250,"width":300,"height":175,"color":"5"},
+		{"id":"node-osi-title","type":"text","text":"# OSI Model & Data Encapsulation\nVisual map of CCNA concepts from notes.","x":-50,"y":-150,"width":400,"height":100},
+		{"id":"file-data-note","type":"file","file":"CCNA/Data Frame.md","x":600,"y":725,"width":600,"height":700},
+		{"id":"c25cb078ad2b5974","type":"file","file":"CCNA/Network Layers.md","x":600,"y":-35,"width":600,"height":685},
+		{"id":"encap-title","type":"text","text":"## ⬇️ Encapsulation (L7 to L1)\nProcess of adding headers to data.","x":-450,"y":-150,"width":350,"height":130,"color":"4"},
+		{"id":"decap-title","type":"text","text":"## ⬆️ Decapsulation (L1 to L7)\nProcess of removing headers at destination.","x":-850,"y":-150,"width":350,"height":130,"color":"3"},
+		{"id":"7fbc2961878e00ec","type":"file","file":"CCNA/Image/Pasted image 20260424143836.jpg","x":-850,"y":300,"width":400,"height":300},
+		{"id":"img-decap-flow","type":"file","file":"CCNA/Image/Pasted image 20260424101548.png","x":-850,"y":50,"width":349,"height":218},
+		{"id":"img-encap-flow","type":"file","file":"CCNA/Image/Pasted image 20260424102037.png","x":-450,"y":29,"width":350,"height":221},
+		{"id":"3929a63e32d97210","type":"file","file":"CCNA/Image/Pasted image 20260424153009.png","x":-850,"y":713,"width":400,"height":287}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"node-layer-7","fromSide":"bottom","toNode":"node-layer-6","toSide":"top"},
+		{"id":"e2","fromNode":"node-layer-6","fromSide":"bottom","toNode":"node-layer-5","toSide":"top"},
+		{"id":"e3","fromNode":"node-layer-5","fromSide":"bottom","toNode":"node-layer-4","toSide":"top"},
+		{"id":"e4","fromNode":"node-layer-4","fromSide":"bottom","toNode":"node-layer-3","toSide":"top"},
+		{"id":"e5","fromNode":"node-layer-3","fromSide":"bottom","toNode":"node-layer-2","toSide":"top"},
+		{"id":"e6","fromNode":"node-layer-2","fromSide":"bottom","toNode":"node-layer-1","toSide":"top"},
+		{"id":"edge-link-note2","fromNode":"node-layer-2","fromSide":"right","toNode":"file-data-note","toSide":"left","label":"Encapsulation Details"},
+		{"id":"ce55c27b15ba0a6c","fromNode":"node-layer-7","fromSide":"right","toNode":"c25cb078ad2b5974","toSide":"left"},
+		{"id":"edge-flow-encap","fromNode":"encap-title","fromSide":"bottom","toNode":"img-encap-flow","toSide":"top"},
+		{"id":"edge-flow-decap","fromNode":"decap-title","fromSide":"bottom","toNode":"img-decap-flow","toSide":"top"},
+		{"id":"edge-decap-to-osi","fromNode":"img-decap-flow","fromSide":"right","toNode":"node-layer-4","toSide":"left","label":"Mapping"}
+	]
+}

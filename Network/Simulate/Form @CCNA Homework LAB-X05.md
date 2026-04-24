@@ -1,55 +1,39 @@
-# CCNA Homework LAB-X05
-
-### 📋 ข้อมูลอ้างอิงหมายเลข MAC Address ในแล็บนี้:
-- **PC0:** `0060.3E99.4CAA`
-- **PC1:** `00E0.F933.10C6`
-- **PC3:** `00D0.D32B.8DD1`
-
----
+# CCNA Homework LAB-X05: MAC Address Table
 
 **รูปที่ 1:** โครงสร้างเครือข่าย (Topology)
 ![[Pasted image 20260424112136.png]]
 
-> [!abstract] 📌 โครงสร้างเครือข่าย (Topology)
-> โครงข่ายจำลองประกอบด้วย Switch 2 ตัว (Switch0 และ Switch1) ที่เชื่อมต่อถึงกัน และมีเครื่องคอมพิวเตอร์ 4 เครื่อง (PC0, PC1 ต่อกับ Switch0 ส่วน PC2, PC3 ต่อกับ Switch1) แล็บนี้จะแสดงให้เห็นถึงการทำงานของตาราง MAC Address บน Switch
-
 **รูปที่ 2:** การทดสอบ Ping จาก PC0 ไปยัง PC1
-PC0 -> PC1
 ![[Pasted image 20260424112305.png]]
 
-> [!example] 🚀 การทดสอบ Ping จาก PC0 ไปยัง PC1
-> เครื่อง PC0 ทำการ Ping ไปหา PC1 (IP: 192.168.1.1) สำเร็จ ซึ่งทั้งสองเครื่องต่ออยู่บน Switch ตัวเดียวกัน การส่งข้อมูลนี้จะทำให้ Switch เริ่มเรียนรู้ MAC Address ของทั้งสองเครื่อง
-
 **รูปที่ 3:** การตรวจสอบตาราง MAC Address บน SW1 (Switch0)
-show mac sw1
 ![[Pasted image 20260424112226.png]]
 
-> [!info] 🔍 การตรวจสอบตาราง MAC Address บน SW1 (Switch0)
-> เมื่อใช้คำสั่ง `show mac-address-table` บน SW1 จะเห็นการจดจำตำแหน่งดังนี้:
-> - พอร์ต **Fa0/2:** จดจำ MAC ของ **PC0** (`0060.3e99.4caa`)
-> - พอร์ต **Fa0/1:** จดจำ MAC ของ **PC1** (`00e0.f933.10c6`)
-> - พอร์ต **Fa0/3:** เป็นพอร์ตที่เชื่อมต่อไปหา Switch อีกฝั่ง
-
 **รูปที่ 4:** การทดสอบ Ping ข้าม Switch (PC1 ไปยัง PC3)
-PC1 -> PC3
 ![[Pasted image 20260424112452.png]]
 
-> [!example] 🚀 การทดสอบ Ping ข้าม Switch (PC1 ไปยัง PC3)
-> เครื่อง PC1 ทำการ Ping ไปหา PC3 (IP: 192.168.1.4) สำเร็จ ซึ่งเป็นการส่งข้อมูลข้ามไปยัง Switch อีกตัวหนึ่ง การกระทำนี้จะทำให้ Switch ทั้งสองตัวต้องเรียนรู้เส้นทางสำหรับส่งข้อมูลข้ามหากัน
-
 **รูปที่ 5:** ตาราง MAC Address ของ SW1 หลังจากการ Ping ข้าม Switch
-SW1
 ![[Pasted image 20260424112556.png]]
 
-> [!success] 📊 ตาราง MAC Address ของ SW1 หลังจากการ Ping ข้าม Switch
-> เมื่อตรวจสอบตารางบน SW1 อีกครั้ง จะพบว่าที่พอร์ต **Fa0/3** (ทางไป SW2) มีการจดจำหมายเลข MAC Address ของ **PC3** (`00d0.d32b.8dd1`) เพิ่มเข้ามา ทำให้ SW1 รู้ว่าถ้าจะส่งข้อมูลไปหา PC3 ต้องส่งออกทางพอร์ตนี้
-
 **รูปที่ 6:** ตาราง MAC Address ของ SW2 (Switch1) หลังจากการ Ping ข้าม Switch
-SW2
 ![[Pasted image 20260424112710.png]]
 
-> [!success] 📊 ตาราง MAC Address ของ SW2 (Switch1) หลังจากการ Ping ข้าม Switch
-> เมื่อตรวจสอบตารางบน SW2 จะเห็นว่า:
-> - พอร์ต **Fa0/3:** จดจำ MAC ของ **PC3** (`00d0.d32b.8dd1`) ซึ่งต่อตรงอยู่กับพอร์ตนี้
-> - พอร์ต **Fa0/2:** จดจำ MAC ของ **PC1** (`00e0.f933.10c6`) ที่ส่งข้อมูลข้ามมาจากฝั่ง SW1
-[[Form @CCNA Homework LAB-X06]]
+---
+
+## 🧠 Technical Deep Dive: Why & How?
+
+### 1. Learning & Forwarding Logic
+- **Why:** Switch ถูกสร้างมาเพื่อแก้ปัญหาการชนกันของข้อมูล (Collision) และเพิ่มประสิทธิภาพ โดยมันต้องรู้ว่า "ใคร อยู่ที่ไหน" เพื่อส่งข้อมูลให้ถูกคนโดยไม่กวนคนอื่น
+- **How (The Learning Phase):** 
+    - เมื่อเฟรมวิ่งเข้ามา Switch จะมองไปที่ **Source MAC Address**
+    - นำ MAC นั้นมาจับคู่กับเลขพอร์ตที่เฟรมนั้นวิ่งเข้ามา บันทึกลงใน **CAM Table** (Content Addressable Memory)
+- **Forwarding Phase:** เมื่อจะส่งออก Switch จะมองที่ **Destination MAC Address** และค้นในตารางเพื่อเลือกพอร์ตส่งออกเพียงพอร์ตเดียว
+
+### 2. Inter-Switch Learning
+- **Mechanism:** เมื่อมีการต่อ Switch สองตัวเข้าหากัน พอร์ตที่เชื่อมต่อ (Trunk/Uplink) จะต้องจดจำ MAC Address "หลายตัว" (Multiple MACs) เพราะมันเปรียบเสมือนประตูที่รวมเครื่องคอมพิวเตอร์ทั้งหมดจากอีกฝั่งมาไว้ที่นี่
+
+### 📨 Packet Flow (The Journey of a Frame)
+1. **The ARP Request:** ก่อน Ping จะเกิด PC0 จะส่ง **Broadcast Frame** (Dest MAC: `FF:FF:FF:FF:FF:FF`)
+2. **Flooding:** Switch รับเฟรม Broadcast และส่งออกทุกพอร์ต (Flooding) เพื่อตามหาเจ้าของ IP นั้น
+3. **Table Building:** ทันทีที่ PC1 ตอบกลับ Switch จะเห็น Source MAC ของ PC1 และบันทึกลงตารางทันที
+4. **Unicast Delivery:** การ Ping ครั้งถัดไป Switch จะไม่ Flood อีกแล้ว แต่จะส่งเป็น **Unicast** ตรงไปยังพอร์ตปลายทางโดยตรง (Forwarding)

@@ -3,38 +3,28 @@
 **รูปที่ 1:** แผนผังเครือข่ายและการกำหนดโหมด DTP
 ![[Pasted image 20260424134353.png]]
 
-> [!abstract] 📌 รายละเอียดโจทย์ (DTP Modes)
-> ในแล็บนี้เราจะทดสอบการทำงานของ DTP ในโหมดต่างๆ เพื่อดูว่าพอร์ตจะกลายเป็น Trunk หรือไม่ โดยมีการกำหนดโหมดดังนี้:
-> - **Dynamic Auto:** รอให้ฝั่งตรงข้ามมาร้องขอการเป็น Trunk
-> - **Dynamic Desirable:** พยายามร้องขอฝั่งตรงข้ามให้เป็น Trunk
-> - **Static Trunk (Nonegotiate):** บังคับเป็น Trunk และปิดการต่อรอง (ไม่ส่ง DTP Packet)
-
----
-
-### 🛠 ขั้นตอนการกำหนดค่า DTP บน Switch
 **รูปที่ 2:** คำสั่งการตั้งค่าในแต่ละ Task
 ![[Pasted image 20260424134336.png]]
 
-> [!info] ⚙️ สรุปคำสั่งที่สำคัญ
-> 1. **โหมด Dynamic Auto:** `switchport mode dynamic auto`
-> 2. **โหมด Dynamic Desirable:** `switchport mode dynamic desirable`
-> 3. **โหมด Static Trunk:** `switchport mode trunk`
-> 4. **การปิดการต่อรอง (Nonegotiate):** `switchport nonegotiate` (ใช้ร่วมกับโหมด trunk เพื่อไม่ให้อีกฝั่งรู้ว่าเป็น DTP)
-
----
-
-### 🔍 การตรวจสอบผลลัพธ์ (Verification)
 **รูปที่ 3:** ตรวจสอบสถานะด้วยคำสั่ง show interfaces switchport
 ![[Pasted image 20260424134428.png]]
 
-> [!success] ✅ ผลการทดสอบ
-> จากการตรวจสอบด้วยคำสั่ง `show interfaces [Port] switchport` จะเห็นผลลัพธ์ที่น่าสนใจดังนี้:
-> 
-> - **พอร์ต Fa0/1 ของ SW1:** ตั้งค่าเป็น **dynamic auto** แต่สามารถทำงานเป็น **trunk** ได้สำเร็จ (Operational Mode: trunk) เพราะฝั่งตรงข้าม (SW3) เป็น desirable
-> - **พอร์ต Fa0/1 ของ SW3:** ตั้งค่าเป็น **dynamic desirable** และทำงานเป็น **trunk** ได้สำเร็จ
-> - **พอร์ต Fa0/3 ของ SW2:** ตั้งค่าเป็น **trunk** แบบปิดการต่อรอง (**Negotiation of Trunking: Off**) ทำให้พอร์ตนี้เป็น Trunk ตลอดเวลาโดยไม่มีการส่ง DTP Packet ไปรบกวน
-> 
-> **สรุปกฎการเกิด Trunk:** 
-> - Desirable + Auto = **Trunk**
-> - Desirable + Desirable = **Trunk**
-> - Auto + Auto = **Access** (ไม่เกิด Trunk)
+---
+
+## 🧠 Technical Deep Dive: Why & How?
+
+### 1. Automation of Trunk Formation
+- **Why:** เพื่อความสะดวกในการต่อขยายเครือข่าย เมื่อเสียบสายระหว่าง Switch ระบบจะพยายามตกลงกันเองว่าจะเชื่อมต่อแบบไหน (Access หรือ Trunk)
+- **How (DTP Modes):** 
+    - **Dynamic Auto:** "ถ้าเธอขอ ฉันจะเป็นให้" (Passive)
+    - **Dynamic Desirable:** "ฉันอยากเป็น Trunk นะ เธอเป็นด้วยไหม?" (Active)
+
+### 2. Security Best Practice (Nonegotiate)
+- **Mechanism:** ในแง่ความปลอดภัย เรามักจะ **ปิด DTP** (`nonegotiate`) และบังคับเป็น Trunk ถาวร เพื่อป้องกันไม่ให้ Hacker ปลอมตัวเป็น Switch แล้วมาร้องขอการเป็น Trunk เพื่อแอบดูข้อมูลทุก VLAN (VLAN Hopping Attack)
+
+### 📨 Packet Flow (DTP Negotiation)
+- **The Protocol:** DTP ส่ง Packet ออกทุกๆ 30 วินาที ไปยัง MAC Address `01:00:0C:CC:CC:CC`
+- **Negotiation Logic:** 
+    - ถ้าฝั่งหนึ่งส่ง **Desirable** และอีกฝั่งเป็น **Auto** -> ทั้งคู่จะตกลงกันและเปลี่ยนสถานะพอร์ตเป็น **Trunk**
+    - ถ้าเป็น **Auto** ทั้งคู่ -> ต่างคนต่างรอให้คนอื่นร้องขอ ผลคือจะเป็นแค่ **Access** (ไม่เกิด Trunk)
+- **Nonegotiate:** เมื่อใช้คำสั่งนี้ Switch จะเลิกส่ง DTP Packet อย่างเด็ดขาด

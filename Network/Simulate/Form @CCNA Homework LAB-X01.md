@@ -1,4 +1,4 @@
-# CCNA Homework LAB-X01
+# CCNA Homework LAB-X01: Basic Configuration
 
 **รูปที่ 1:** การตั้งชื่อ Router
 ![[Pasted image 20260424102201.png]]
@@ -9,37 +9,38 @@
 **รูปที่ 2:** การตั้งรหัสผ่าน Enable
 ![[Pasted image 20260424102346.png]]
 
-> [!note] 🔑 การตั้งรหัสผ่าน Enable
-> เป็นการตั้งรหัสผ่านสำหรับเข้าสู่โหมด Privilege (โหมดที่มีเครื่องหมาย #) โดยใช้คำสั่ง `enable password ccna` ซึ่งกำหนดรหัสผ่านคือ **"ccna"**
-
 **รูปที่ 3:** การตั้งรหัสผ่าน Console
 ![[Pasted image 20260424102412.png]]
-
-> [!note] 🖥️ การตั้งรหัสผ่าน Console
-> เป็นการตั้งรหัสผ่านสำหรับการเชื่อมต่อผ่านสาย Console (สายที่ต่อตรงเข้าอุปกรณ์) โดยกำหนดรหัสผ่านเป็น **"consolepass"** และใช้คำสั่ง `login` เพื่อสั่งให้เรียกถามรหัสผ่านทุกครั้งที่มีการเชื่อมต่อ
 
 **รูปที่ 4:** การตั้งรหัสผ่าน VTY (Telnet/SSH)
 ![[Pasted image 20260424102426.png]]
 
-> [!note] 🌐 การตั้งรหัสผ่าน VTY (Telnet/SSH)
-> เป็นการตั้งรหัสผ่านสำหรับการเข้าถึงจากระยะไกล (Virtual Terminal - VTY) สำหรับช่องทางที่ 0 ถึง 15 โดยกำหนดรหัสผ่านเป็น **"vtypass"** เพื่อความปลอดภัยเวลาทำ Telnet หรือ SSH เข้ามา
-
 **รูปที่ 5:** การตั้งค่าข้อความประกาศ (Banner MOTD)
 ![[Pasted image 20260424102440.png]]
-
-> [!warning] 📢 การตั้งค่าข้อความประกาศ (Banner MOTD)
-> เป็นการตั้งค่าข้อความประกาศ (Banner Message of the Day) ที่จะแสดงผลก่อนการเข้าสู่ระบบ โดยตั้งเป็นคำเตือนว่า **"Unauthorized Login Prohibited"** (ห้ามผู้ไม่ได้รับอนุญาตเข้าสู่ระบบ)
 
 **รูปที่ 6:** การกำหนด IP Address ให้อินเทอร์เฟซ
 ![[Pasted image 20260424102450.png]]
 
-> [!info] 🔌 การกำหนด IP Address ให้อินเทอร์เฟซ
-> เป็นการกำหนดหมายเลข IP Address ให้กับพอร์ตสื่อสาร `fastEthernet 0/0` โดยกำหนดเป็น **192.168.1.254** และใช้คำสั่ง `no shutdown` เพื่อเปิดใช้งานพอร์ต (ให้อินเทอร์เฟซทำงาน)
-
 **รูปที่ 7:** การตั้งค่า Default Gateway ให้กับ Switch
 ![[Pasted image 20260424102528.png]]
 
-> [!info] 🛣️ การตั้งค่า Default Gateway ให้กับ Switch
-> เป็นการกำหนดค่า **Default Gateway** ให้กับ Switch (SW1) เพื่อให้ตัว Switch สามารถสื่อสารกับอุปกรณ์ที่อยู่นอกเครือข่ายของตัวเองได้ โดยชี้ไปที่ IP ของ Router (192.168.1.254)
+---
 
-[[Form @CCNA Homework LAB-X02]]
+## 🧠 Technical Deep Dive: Why & How?
+
+### 1. Management Identity (Hostname & Banner)
+- **Why:** ในระบบเครือข่ายขนาดใหญ่ที่มีอุปกรณ์นับร้อย การตั้ง `hostname` ช่วยระบุ "ตำแหน่ง" และ "หน้าที่" ของอุปกรณ์ผ่าน CLI ป้องกันความผิดพลาดในการคอนฟิกผิดเครื่อง ส่วน `Banner MOTD` มีไว้เพื่อผลทางกฎหมาย (Legal Notice) เพื่อแจ้งเตือนว่าผู้ที่ไม่มีส่วนเกี่ยวข้องห้ามเข้าระบบ
+- **How:** คำสั่งเหล่านี้จะไปแก้ไขไฟล์ `running-config` ใน RAM ทันที
+
+### 2. Multi-Layer Security
+- **Enable Password:** ปกป้องการเข้าถึงโหมดสิทธิพิเศษ (Privileged EXEC) ซึ่งสามารถดูคอนฟิกและลบไฟล์ได้
+- **Console Password:** ป้องกันการเสียบสายต่อตรง (Physical Access) เข้าหน้าเครื่อง
+- **VTY Password:** ป้องกันการรีโมทผ่านเครือข่าย (Telnet/SSH) โดยแบ่งเป็นช่องสัญญาณ (Virtual Lines 0-15)
+
+### 3. Interface & Gateway Logic
+- **Router IP:** การตั้ง IP ที่ `FastEthernet 0/0` คือการสร้างประตูทางออก (Default Gateway) ให้กับเครือข่ายวงนั้น
+- **Switch Default Gateway:** Switch L2 ไม่มีการ Routing ในตัว มันต้องการ Default Gateway เพื่อให้ตัวมันเองสามารถ "ส่งข้อมูลตอบกลับ" ไปยังผู้จัดการ (Admin) ที่อยู่คนละวง Network ได้
+
+### 📨 Packet Flow
+- **Local Console:** ข้อมูลวิ่งเป็นสัญญาณ Serial (Bits) ไม่ผ่าน Protocol Stack ของ Network
+- **VTY (Telnet):** ข้อมูลถูกห่อหุ้มด้วย **TCP Port 23** เมื่อ Admin พิมพ์ตัวอักษร 1 ตัว จะเกิดการส่ง 1 Packet ไปที่ Router และ Router จะส่ง Packet นั้นกลับมาแสดงผลที่หน้าจอ Admin (Echo) เพื่อยืนยันว่าได้รับข้อมูลแล้ว
