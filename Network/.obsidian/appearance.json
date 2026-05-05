@@ -1,5 +1,6 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "Things",
   "baseFontSize": 16,
-  "theme": "moonstone"
+  "theme": "obsidian",
+  "accentColor": "#be1eb8"
 }
