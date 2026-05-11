@@ -26,9 +26,9 @@ This repository contains Packet Tracer lab files (.pka) for CCNA 200-301 prepara
 - [x] LAB-X20 Static Route and Default Route_.pka
 - [x] LAB-X21 OSPF Single Area_.pka
 - [x] LAB-X22 OSPF Multi-Area_.pka
-- [ ] LAB-X23 OSPF Summarization_.pka
-- [ ] LAB-X24 OSPF Default-information Originate_.pka
-- [ ] LAB-X25 OSPF Authentication_.pka
+- [x] LAB-X23 OSPF Summarization_.pka
+- [x] LAB-X24 OSPF Default-information Originate_.pka
+- [x] LAB-X25 OSPF Authentication_.pka
 - [ ] LAB-X26 OSPF Path Optimization_.pka
 - [ ] LAB-X27 IPv6 OSPF Routing_.pka
 - [ ] LAB-X28 EIGRP_.pka

@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"govern","type":"text","text":"## ⚖️ Govern (กำกับดูแล)\nกำหนดนโยบาย กลยุทธ์ และบริบทองค์กร","x":0,"y":-200,"width":250,"height":150},
+		{"id":"identify","type":"text","text":"## 🔍 Identify (ระบุ)\nสำรวจสินทรัพย์และความเสี่ยง","x":350,"y":-50,"width":250,"height":150},
+		{"id":"protect","type":"text","text":"## 🛡️ Protect (ป้องกัน)\nมาตรการป้องกันและควบคุมการเข้าถึง","x":350,"y":250,"width":250,"height":150},
+		{"id":"detect","type":"text","text":"## 🚨 Detect (ตรวจจับ)\nเฝ้าระวังและตรวจหาความผิดปกติ","x":0,"y":400,"width":250,"height":150},
+		{"id":"respond","type":"text","text":"## 📞 Respond (รับมือ)\nตอบสนองต่อเหตุการณ์ตามแผนที่วางไว้","x":-350,"y":250,"width":250,"height":150},
+		{"id":"recover","type":"text","text":"## 🔄 Recover (กู้คืน)\nกู้คืนระบบและสรุปบทเรียน","x":-350,"y":-50,"width":250,"height":150},
+		{"id":"root","type":"text","text":"# NIST CSF 2.0\n6 ฟังก์ชันหลักเพื่อความปลอดภัยไซเบอร์","x":-50,"y":50,"width":350,"height":100}
+	],
+	"edges":[
+		{"id":"e-g-i","fromNode":"govern","fromSide":"right","toNode":"identify","toSide":"left"},
+		{"id":"e-i-p","fromNode":"identify","fromSide":"bottom","toNode":"protect","toSide":"top"},
+		{"id":"e-p-d","fromNode":"protect","fromSide":"left","toNode":"detect","toSide":"right"},
+		{"id":"e-d-rs","fromNode":"detect","fromSide":"left","toNode":"respond","toSide":"right"},
+		{"id":"e-rs-rc","fromNode":"respond","fromSide":"top","toNode":"recover","toSide":"bottom"},
+		{"id":"e-rc-g","fromNode":"recover","fromSide":"right","toNode":"govern","toSide":"left"},
+		{"id":"e-root-g","fromNode":"root","fromSide":"top","toNode":"govern","toSide":"bottom"}
+	]
+}
