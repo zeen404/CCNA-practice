@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"1","type":"text","text":"# มาตรฐาน ISO 27001 (ISMS)","x":0,"y":0,"width":350,"height":100},
+		{"id":"c1","type":"text","text":"## 1. บริบทขององค์กร\nทำความเข้าใจประเด็นภายใน/ภายนอก และความต้องการของผู้เกี่ยวข้อง","x":-400,"y":200,"width":250,"height":150},
+		{"id":"c2","type":"text","text":"## 2. ภาวะผู้นำ\nความมุ่งมั่นของผู้บริหารระดับสูง นโยบาย และบทบาทหน้าที่","x":-125,"y":200,"width":250,"height":150},
+		{"id":"c3","type":"text","text":"## 3. การวางแผน\nการจัดการความเสี่ยง โอกาส และวัตถุประสงค์ด้านความมั่นคงปลอดภัย","x":150,"y":200,"width":250,"height":150},
+		{"id":"c4","type":"text","text":"## 4. การสนับสนุน\nทรัพยากร ความรู้ความสามารถ ความตระหนัก และการสื่อสาร","x":425,"y":200,"width":250,"height":150},
+		{"id":"c5","type":"text","text":"## 5. การดำเนินการ\nการนำแผนจัดการความเสี่ยงไปปฏิบัติและการควบคุม","x":-250,"y":450,"width":250,"height":150},
+		{"id":"c6","type":"text","text":"## 6. การประเมินผล\nการวัดผล การเฝ้าระวัง และการตรวจประเมินภายใน (Audit)","x":25,"y":450,"width":250,"height":150},
+		{"id":"c7","type":"text","text":"## 7. การปรับปรุง\nการแก้ไขข้อบกพร่อง และการพัฒนาอย่างต่อเนื่อง","x":300,"y":450,"width":250,"height":150}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"1","toNode":"c1","fromSide":"bottom","toSide":"right"},
+		{"id":"e2","fromNode":"1","toNode":"c2","fromSide":"bottom","toSide":"top"},
+		{"id":"e3","fromNode":"1","toNode":"c3","fromSide":"bottom","toSide":"top"},
+		{"id":"e4","fromNode":"1","toNode":"c4","fromSide":"bottom","toSide":"left"},
+		{"id":"e5","fromNode":"c3","toNode":"c5","fromSide":"bottom","toSide":"top"},
+		{"id":"e6","fromNode":"c5","toNode":"c6","fromSide":"right","toSide":"left"},
+		{"id":"e7","fromNode":"c6","toNode":"c7","fromSide":"right","toSide":"left"}
+	]
+}
