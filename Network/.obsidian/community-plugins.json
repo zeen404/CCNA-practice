@@ -1,5 +1,9 @@
 [
   "terminal",
   "templater-obsidian",
-  "calendar"
+  "calendar",
+  "realclaudian",
+  "obsidian-excalidraw-plugin",
+  "obsidian-git",
+  "agent-client"
 ]

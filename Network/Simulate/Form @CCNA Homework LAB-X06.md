@@ -1,28 +1,28 @@
 # CCNA Homework LAB-X06: VLAN & Trunking Configuration
 
 **รูปที่ 1:** แผนผังเครือข่าย (Topology)
-![[Pasted image 20260424114456.png]]
+![](Image/Pasted%20image%2020260424114456.png)
 
 **รูปที่ 2 - 6:** การสร้าง VLAN 10, 20, 30 บน SW1 ถึง SW5
-![[Pasted image 20260424114521.png]]
+![](Image/Pasted%20image%2020260424114521.png)
 
 **รูปที่ 7:** ตรวจสอบความถูกต้องของ VLAN บน SW1
-![[Pasted image 20260424114615.png]]
+![](Image/Pasted%20image%2020260424114615.png)
 
 **รูปที่ 8 - 9:** กำหนดพอร์ตเชื่อมต่อระหว่าง Switch ให้เป็นโหมด Trunk
-![[Pasted image 20260424114624.png]]
+![](Image/Pasted%20image%2020260424114624.png)
 
 **รูปที่ 10 - 11:** ตรวจสอบสถานะ Trunk
-![[Pasted image 20260424114658.png]]
+![](Image/Pasted%20image%2020260424114658.png)
 
 **รูปที่ 12 - 13:** การกำหนดพอร์ตให้กับ PC และ Server ตาม VLAN ที่ต้องการ
-![[Pasted image 20260424114719.png]]
+![](Image/Pasted%20image%2020260424114719.png)
 
 **รูปที่ 14:** ตรวจสอบรายละเอียดของพอร์ต
-![[Pasted image 20260424114753.png]]
+![](Image/Pasted%20image%2020260424114753.png)
 
 **รูปที่ 15:** การทดสอบ Ping
-![[Pasted image 20260424114803.png]]
+![](Image/Pasted%20image%2020260424114803.png)
 
 ---
 
@@ -39,3 +39,13 @@
 1. **Ingress (Access Port):** เมื่อ PC ส่งข้อมูล (Untagged) เข้าพอร์ต Fa0/1 ของ Switch -> Switch จะจำแนกเฟรมนั้นให้อยู่ใน VLAN 10 ทันทีตามที่เราคอนฟิกไว้
 2. **Trunking (Between Switches):** เมื่อเฟรมต้องข้ามไปยัง Switch อีกตัว -> Switch จะแปะ **VLAN Tag 10** ลงไปในเฟรม ข้อมูลนี้จะเดินทางไปตามสาย Trunk
 3. **Egress (Access Port):** เมื่อถึง Switch ปลายทาง -> มันจะดู Tag แล้วพบว่าเป็นของ VLAN 10 -> มันจะ **ถอด Tag ออก** แล้วส่งเฟรมดั้งเดิมไปให้ PC ปลายทาง
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** PC ที่อยู่ VLAN เดียวกันแต่คนละ Switch คุยกันไม่ได้
+- **Solution:** ตรวจสอบพอร์ตเชื่อมต่อระหว่าง Switch ว่าลืมตั้งเป็นโหมด `trunk` หรือไม่ (ถ้าเป็น access มันจะยอมให้วิ่งได้แค่ VLAN เดียว)
+- **Verification:**
+    - ใช้คำสั่ง `show vlan brief` เพื่อดูว่าพอร์ตต่างๆ อยู่ใน VLAN ที่ถูกต้องไหม
+    - ใช้คำสั่ง `show interfaces trunk` เพื่อเช็คสถานะการเชื่อมต่อระหว่าง Switch
+    - ทดสอบ `ping` ระหว่าง PC ที่อยู่ VLAN เดียวกันแต่ต่าง Switch กัน

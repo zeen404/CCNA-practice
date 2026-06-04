@@ -1,19 +1,19 @@
 # CCNA Homework LAB-X10: Inter-VLAN Routing (Router-on-a-Stick)
 
 **รูปที่ 1:** แผนผังเครือข่าย (Topology)
-![[Pasted image 20260424135425.png]]
+![](Image/Pasted%20image%2020260424135425.png)
 
 **รูปที่ 2:** คำสั่งเปิดพอร์ต Physical
-![[Pasted image 20260424135743.png]]
+![](Image/Pasted%20image%2020260424135743.png)
 
 **รูปที่ 3:** การสร้าง Sub-Interface สำหรับแต่ละ VLAN
-![[Pasted image 20260424135805.png]]
+![](Image/Pasted%20image%2020260424135805.png)
 
 **รูปที่ 4:** ตรวจสอบพอร์ตและตารางเส้นทาง (Routing Table)
-![[Pasted image 20260424135815.png]]
+![](Image/Pasted%20image%2020260424135815.png)
 
 **รูปที่ 5:** ทดสอบ Ping ข้ามวงเครือข่าย
-![[Pasted image 20260424135824.png]]
+![](Image/Pasted%20image%2020260424135824.png)
 
 ---
 
@@ -38,3 +38,12 @@
    - Router **ห่อ Tag ใหม่เป็น VLAN 20** -> ส่งกลับลงมาที่ Switch ทางสายเดิม
    - Switch รับมา -> เห็น Tag 20 -> ส่งออกพอร์ตที่เป็นของ PC2
 **ผลลัพธ์:** ข้อมูลวิ่งขึ้นและลงในสายเส้นเดียวเหมือนเส้นผม (Hairpin) จึงเป็นที่มาของชื่อ Router-on-a-Stick
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** ลืมเปิดพอร์ต Physical (พอร์ตหลัก) บน Router ทำให้ Sub-interfaces ทั้งหมดขึ้นสถานะ Down
+- **Solution:** ต้องเข้าไปที่ Interface หลัก (เช่น `int g0/0`) แล้วสั่ง `no shutdown`
+- **Verification:**
+    - ใช้คำสั่ง `show ip route` บน Router เพื่อเช็คว่าเห็นวงเครือข่ายของทั้งสอง VLAN หรือยัง (ต้องขึ้นตัว C - Connected)
+    - ทดสอบ `ping` ข้าม VLAN ระหว่าง PC คนละวงกัน

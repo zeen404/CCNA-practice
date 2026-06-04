@@ -1,0 +1,82 @@
+{
+  "claude": {
+    "id": "claude-code-acp",
+    "displayName": "Claude Code",
+    "apiKey": "",
+    "command": "claude-agent-acp",
+    "args": [],
+    "env": []
+  },
+  "codex": {
+    "id": "codex-acp",
+    "displayName": "Codex",
+    "apiKey": "",
+    "command": "C:\\Users\\thann\\AppData\\Roaming\\npm\\codex-acp",
+    "args": [],
+    "env": []
+  },
+  "gemini": {
+    "id": "gemini-cli",
+    "displayName": "Gemini CLI",
+    "apiKey": "",
+    "command": "C:\\Users\\thann\\AppData\\Roaming\\npm\\gemini",
+    "args": [
+      "--experimental-acp"
+    ],
+    "env": []
+  },
+  "customAgents": [],
+  "defaultAgentId": "codex-acp",
+  "autoAllowPermissions": false,
+  "autoMentionActiveNote": true,
+  "enableSystemNotifications": true,
+  "debugMode": false,
+  "nodePath": "C:\\Program Files\\nodejs\\node.exe",
+  "exportSettings": {
+    "defaultFolder": "Agent Client",
+    "filenameTemplate": "agent_client_{date}_{time}",
+    "autoExportOnNewChat": false,
+    "autoExportOnCloseChat": false,
+    "openFileAfterExport": true,
+    "includeImages": true,
+    "imageLocation": "obsidian",
+    "imageCustomFolder": "Agent Client",
+    "frontmatterTag": "agent-client"
+  },
+  "windowsWslMode": false,
+  "sendMessageShortcut": "enter",
+  "chatViewLocation": "right-tab",
+  "displaySettings": {
+    "autoCollapseDiffs": false,
+    "diffCollapseThreshold": 10,
+    "maxNoteLength": 10000,
+    "maxSelectionLength": 10000,
+    "showEmojis": true,
+    "fontSize": 13
+  },
+  "savedSessions": [
+    {
+      "sessionId": "019e3972-bc4f-7da1-bda0-b5b54b3a4e66",
+      "agentId": "codex-acp",
+      "cwd": "C:\\Users\\thann\\Desktop\\MyProject\\CCNA\\Network",
+      "title": "ทำสรุปความรู้  lab 28 คืออะไร การทำงานอย่างไร ประโ...",
+      "createdAt": "2026-05-18T05:01:57.036Z",
+      "updatedAt": "2026-05-18T05:01:57.036Z"
+    }
+  ],
+  "lastUsedModels": {
+    "gemini-cli": "auto-gemini-3"
+  },
+  "lastUsedModes": {
+    "gemini-cli": "yolo",
+    "codex-acp": "full-access"
+  },
+  "enableFloatingChat": false,
+  "floatingButtonImage": "",
+  "floatingWindowSize": {
+    "width": 400,
+    "height": 500
+  },
+  "floatingWindowPosition": null,
+  "floatingButtonPosition": null
+}

@@ -1,13 +1,13 @@
 # CCNA Homework LAB-X03: Backup Configuration
 
 **รูปที่ 1:** การสำรองไฟล์การตั้งค่าไปยัง TFTP Server
-![[Pasted image 20260424104830.png]]
+![](Image/Pasted%20image%2020260424104830.png)
 
 **รูปที่ 2:** การล้างค่าคอนฟิกและการ Restart เครื่อง
-![[Pasted image 20260424104846.png]]
+![](Image/Pasted%20image%2020260424104846.png)
 
 **รูปที่ 3:** กระบวนการกู้คืนไฟล์การตั้งค่าจาก TFTP Server
-![[Pasted image 20260424104935.png]]
+![](Image/Pasted%20image%2020260424104935.png)
 
 ---
 
@@ -27,3 +27,12 @@
     3. **Reliability:** แม้ใช้ UDP แต่ TFTP มีการควบคุมความถูกต้องเอง โดยถ้าส่งไปแล้ว Server ไม่ตอบกลับ ACK (Acknowledgment) ภายในเวลาที่กำหนด Router จะส่งบล็อกเดิมซ้ำอีกครั้ง
     4. **Completion:** เมื่อได้รับไฟล์ขนาดน้อยกว่า 512 bytes จะถือว่าสิ้นสุดการส่ง
 - **ARP Request:** ก่อนการส่ง TFTP ครั้งแรก Router จะส่ง **ARP Broadcast** เพื่อถามหา MAC Address ของ TFTP Server เสมอ
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** `TFTP Error: Time out` หรือส่งไฟล์ไม่ได้
+- **Solution:** ตรวจสอบว่า IP ของ Router และ TFTP Server อยู่ในวงเดียวกันหรือไม่ และดูว่า Firewall บนฝั่ง Server บล็อค UDP Port 69 หรือเปล่า
+- **Verification:**
+    - ลอง `ping` จาก Router ไปหา Server ก่อนเริ่ม Backup
+    - หลังจากกู้คืน (Restore) แล้ว ให้ใช้คำสั่ง `show running-config` ดูว่าคอนฟิกเดิมกลับมาครบไหม

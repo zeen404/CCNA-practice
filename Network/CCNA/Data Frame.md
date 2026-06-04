@@ -1,6 +1,6 @@
-![[Pasted image 20260424102037.png]]
+![](Image/Pasted%20image%2020260424102037.png)
 ### Layer 7 ถึง Layer 5: Data (ข้อมูลแอปพลิเคชัน)
-(ดูภาพรวม: [[Network Layers#Layer 7: Application Layer (ชั้นประยุกต์)|OSI Model]])
+(ดูภาพรวม: [OSI Model](Network%20Layers.md#Layer%207:%20Application%20Layer%20(ชั้นประยุกต์)))
 
 สามชั้นบนสุดมักจะทำงานร่วมกันในซอฟต์แวร์แอปพลิเคชันและระบบปฏิบัติการ:
 
@@ -12,7 +12,7 @@
     
 
 ### Layer 4: Transport Layer -> Segment / Datagram
-(ดูภาพรวม: [[Network Layers#Layer 4: Transport Layer (ชั้นขนส่ง)|OSI Model]])
+(ดูภาพรวม: [OSI Model](Network%20Layers.md#Layer%204:%20Transport%20Layer%20(ชั้นขนส่ง)))
 
 ข้อมูลจาก Layer 5 จะถูกส่งลงมา ชั้นนี้จะทำหน้าที่หั่นข้อมูลใหญ่ๆ ออกเป็นชิ้นเล็กๆ เรียกว่ากระบวนการ Segmentation
 
@@ -22,7 +22,7 @@
     
 
 ### Layer 3: Network Layer -> Packet
-(ดูภาพรวม: [[Network Layers#Layer 3: Network Layer (ชั้นเครือข่าย)|OSI Model]])
+(ดูภาพรวม: [OSI Model](Network%20Layers.md#Layer%203:%20Network%20Layer%20(ชั้นเครือข่าย)))
 
 Layer นี้ดูแลเรื่องการหาเส้นทาง (Routing) ข้ามข่ายเครือข่าย
 
@@ -32,7 +32,7 @@ Layer นี้ดูแลเรื่องการหาเส้นทา�
     
 
 ### Layer 2: Data Link Layer -> Ethernet Frame
-(ดูภาพรวม: [[Network Layers#Layer 2: Data Link Layer (ชั้นเชื่อมโยงข้อมูล)|OSI Model]])
+(ดูภาพรวม: [OSI Model](Network%20Layers.md#Layer%202:%20Data%20Link%20Layer%20(ชั้นเชื่อมโยงข้อมูล)))
 
 นี่คือชั้นที่ **Ethernet Frame** ถูกสร้างขึ้น Layer นี้จะดูแลการส่งข้อมูลแบบ Node-to-Node ภายในเครือข่ายเดียวกัน (LAN) ผ่านฮาร์ดแวร์เช่น Switch หรือ Network Interface Card (NIC)
 
@@ -66,7 +66,7 @@ Layer นี้ดูแลเรื่องการหาเส้นทา�
 **ก้อนข้อมูลทั้งหมดนี้รวมกันเรียกว่า:** `Frame`
 
 ### Layer 1: Physical Layer -> Bits
-(ดูภาพรวม: [[Network Layers#Layer 1: Physical Layer (ชั้นกายภาพ)|OSI Model]])
+(ดูภาพรวม: [OSI Model](Network%20Layers.md#Layer%201:%20Physical%20Layer%20(ชั้นกายภาพ)))
 
 เมื่อ Layer 2 ประกอบร่าง Ethernet Frame เสร็จแล้ว มันจะส่งต่อลงมาที่ Layer 1 (ส่วนประกอบฮาร์ดแวร์บนการ์ดแลน)
 
