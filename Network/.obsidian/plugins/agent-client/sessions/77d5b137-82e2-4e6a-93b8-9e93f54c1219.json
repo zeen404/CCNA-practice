@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "sessionId": "77d5b137-82e2-4e6a-93b8-9e93f54c1219",
+  "agentId": "gemini-cli",
+  "messages": [
+    {
+      "id": "e3971f69-ede6-454a-901a-8b9b60889957",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "[MODE_UPDATE] yolo"
+        }
+      ],
+      "timestamp": "2026-05-18T04:36:47.651Z"
+    },
+    {
+      "id": "c994e384-b53c-4777-aaff-35929f3aeb9e",
+      "role": "user",
+      "content": [
+        {
+          "type": "text_with_context",
+          "text": "ทำสรุปความรู้  lab 28 คืออะไร การทำงานอย่างไร ประโยชน์ ผลเสีย ละเอียด",
+          "autoMentionContext": {
+            "noteName": "LAB 28 - Configuring Standard Numbered ACL",
+            "notePath": "CCNA Zero-to-Hero/LAB 28 - Configuring Standard Numbered ACL.md"
+          }
+        }
+      ],
+      "timestamp": "2026-05-18T04:36:50.965Z"
+    },
+    {
+      "id": "aefd0d13-a414-49b4-bf23-d956fb3aa718",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "agent_thought",
+          "text": "**Analyzing File Structures**\nI'm currently examining the directory contents to identify the most relevant files for my task. My goal is to systematically explore and understand the structure of the project to determine the optimal path forward.**Summarizing ACL Configuration**\nI'm now processing the information from the lab document to construct a comprehensive explanation. My focus is on translating the technical details into clear descriptions of what standard numbered ACLs are, how they function, and their advantages and disadvantages in network security.**Explaining ACL Functionality**\nI am now extracting key details from the lab document to explain standard numbered ACLs. I will detail their purpose, operational mechanisms, and associated pros and cons, aiming for a thorough and informative summary."
+        }
+      ],
+      "timestamp": "2026-05-18T04:36:54.875Z"
+    },
+    {
+      "id": "0b589424-7f46-4c48-a27f-5f40723861bf",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "update_topic_1779079017460_0",
+          "title": "Update topic to: \"Summarizing LAB 28 - Standard Numbered ACL\"",
+          "status": "completed",
+          "kind": "think",
+          "content": [],
+          "locations": []
+        }
+      ],
+      "timestamp": "2026-05-18T04:36:57.717Z"
+    },
+    {
+      "id": "9f5cc539-b15c-4731-94b5-b4f4fb8cc5a1",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "read_file_1779079017548_1",
+          "title": "CCNA Zero-to-Her... Numbered ACL.md",
+          "status": "completed",
+          "kind": "read",
+          "content": [],
+          "locations": [
+            {
+              "path": "C:\\Users\\thann\\Desktop\\MyProject\\CCNA\\Network\\CCNA Zero-to-Hero\\LAB 28 - Configuring Standard Numbered ACL.md"
+            }
+          ]
+        },
+        {
+          "type": "agent_thought",
+          "text": "**Analyzing Directory Contents**\nI'm currently examining the files within the project directory. My aim is to identify any relevant source code files and configuration settings that might provide insight into the project's structure and dependencies. This will help me determine the most effective approach for moving forward with the next phase.**Compiling Lab Summary**\nI'm now focused on compiling a comprehensive summary for Lab 28 concerning standard numbered ACLs. This involves detailing their definition, operational principles, advantages, disadvantages, and configuration specifics, all presented in Thai for clarity.**Formulating Lab Summary**\nI am now generating the summary for Lab 28, focusing on standard numbered ACLs. This involves explaining their purpose, operational mechanisms, advantages, disadvantages, and configuration details, all presented clearly in Thai.**Developing Lab Summary**\nI'm now focused on constructing a detailed summary for Lab 28. This involves explaining the core concepts of standard numbered ACLs, including their definition, operational logic, benefits, drawbacks, and configuration specifics, all presented in Thai.**Formulating ACL Explanation**\nI'm now structuring the explanation of standard numbered ACLs for Lab 28. This involves detailing what they are, how they operate, their advantages and disadvantages, and the specifics of their configuration, all presented in Thai for clarity.**Summarizing ACL Configuration**\nI'm now generating a summary for Lab 28 regarding standard numbered ACLs. This involves detailing their definition, operational logic, advantages, disadvantages, and specific configuration aspects, all presented in Thai.**Generating ACL Summary**\nI'm now focused on creating a comprehensive Thai summary for Lab 28 concerning standard numbered ACLs. This involves detailing their definition, operational principles, advantages, disadvantages, and configuration specifics to clearly explain their function and application.**Explaining ACL Functionality**\nI am now detailing how standard numbered ACLs operate, focusing on their top-down processing and the implicit deny all rule. I will also cover best practices for applying them to network interfaces in both inbound and outbound directions, ensuring a clear understanding for the user."
+        },
+        {
+          "type": "text",
+          "text": "จากการวิเคราะห์ข้อมูลและเนื้อหาเครือข่ายในระดับ CCNA สำหรับ **LAB 28: Configuring Standard Numbered ACL** (การตั้งค่า Standard Access Control List แบบระบุหมายเลข) สามารถสรุปรายละเอียด การทำงาน ประโยชน์ และข้อเสียได้ดังนี้ครับ\n\n---\n\n### 1. Standard Numbered ACL คืออะไร?\n**Access Control List (ACL)** คือชุดของคำสั่ง (Rules/Policies) ที่สร้างขึ้นบน Router หรือ Layer 3 Switch เพื่อทำหน้าที่เป็นเหมือน \"ยามรักษาความปลอดภัย\" คอยคัดกรองแพ็กเก็ตข้อมูล (Traffic) ที่วิ่งเข้าหรือออกจากอุปกรณ์ ว่าจะ **อนุญาต (Permit)** หรือ **ปฏิเสธ (Deny)**\n\n**Standard Numbered ACL** เป็นประเภทพื้นฐานและเรียบง่ายที่สุดของ ACL โดยมีลักษณะเฉพาะดังนี้:\n*   **ใช้หมายเลขกำกับ:** ใช้หมายเลขตั้งแต่ **1 ถึง 99** (และช่วงขยาย 1300-1999) \n*   **ตรวจสอบแค่ IP ต้นทาง (Source IP Address) เท่านั้น:** กฎนี้จะสนใจแค่ว่า \"ใครเป็นคนส่งข้อมูลมา\" แต่จะไม่สนว่า \"จะส่งไปหาใคร (Destination)\" หรือ \"ใช้บริการ/พอร์ตอะไร (Protocol/Port)\" \n\n---\n\n### 2. หลักการทำงาน (How it works)\n*   **Top-Down Processing (ประมวลผลจากบนลงล่าง):** เมื่อแพ็กเก็ตวิ่งเข้ามา Router จะตรวจสอบเงื่อนไขใน ACL ทีละบรรทัดจากบนลงล่าง หากแพ็กเก็ตตรงกับเงื่อนไขบรรทัดใด Router จะทำตามคำสั่ง (Permit หรือ Deny) ทันที แล้ว**หยุดอ่านบรรทัดถัดไป**\n*   **Implicit Deny Any (กฎปฏิเสธทุกสิ่งในตอนท้าย):** ในบรรทัดสุดท้ายของทุก ACL จะมีกฎล่องหนซ่อนอยู่เสมอ คือ \"ถ้าไม่ตรงกับกฎข้อใดเลยข้างบน ให้ปฏิเสธ (ทิ้ง) แพ็กเก็ตนี้ซะ\" ดังนั้นหากสร้าง ACL ขึ้นมา ต้องมีคำสั่ง Permit อย่างน้อย 1 บรรทัดเสมอ ไม่เช่นนั้นทุกอย่างจะถูกบล็อกหมด\n*   **ตำแหน่งการวางที่ดีที่สุด (Placement):** ตาม Best Practice ของ Cisco การติดตั้ง Standard ACL ควรจะนำไปผูกกับ Interface ที่อยู่ **\"ใกล้กับจุดหมายปลายทาง (Destination) มากที่สุด\"** (เพราะถ้าเอาไปวางใกล้ต้นทาง ต้นทางนั้นจะถูกบล็อกไม่ให้ไปหาเครือข่ายอื่นๆ ทั้งหมดเลย เนื่องจากมันระบุปลายทางไม่ได้)\n*   **Direction (ทิศทางการกรอง):** ต้องเลือกว่าจะดักจับข้อมูล **ขาเข้า (In)** หรือ **ขาออก (Out)** ของ Interface นั้นๆ\n\n---\n\n### 3. ประโยชน์ (Benefits)\n1. **ตั้งค่าได้ง่ายและรวดเร็ว:** เนื่องจากรูปแบบคำสั่งไม่ซับซ้อน (ไม่ต้องระบุ Destination IP หรือ Port) เหมาะสำหรับการบล็อกหรืออนุญาตแบบเหมาเข่ง (Host หรือ Subnet)\n2. **ประหยัดทรัพยากร (Low Overhead):** Router ใช้ CPU และ Memory น้อยในการประมวลผล เพราะตรวจสอบแค่เพียงฟิลด์ Source IP ใน IP Header เท่านั้น\n3. **จัดการทราฟฟิกและเพิ่มความปลอดภัยเบื้องต้น:** สามารถใช้ป้องกันเครือข่ายภายในไม่ให้ถูกเข้าถึงจาก IP หรือ เครือข่ายที่ไม่ได้รับอนุญาต หรือใช้คัดกรองว่า IP ใดสามารถ Remote เข้ามาจัดการ Router ผ่าน Telnet/SSH (VTY lines) ได้บ้าง\n\n---\n\n### 4. ผลเสียและข้อจำกัด (Drawbacks / Limitations)\n1. **ขาดความยืดหยุ่นและความละเอียด (Lack of Granularity):** นี่คือข้อเสียที่ใหญ่ที่สุด เพราะมันไม่สามารถระบุ IP ปลายทางได้ หากวาง ACL ผิดตำแหน่ง อาจส่งผลให้ Host ต้นทางไม่สามารถติดต่อกับเครือข่ายอื่นที่ควรจะติดต่อได้ (Collateral damage)\n2. **บล็อกเป็นราย Service/Protocol ไม่ได้:** ไม่สามารถเลือกบล็อกเฉพาะบางแอปพลิเคชันได้ เช่น ไม่สามารถสั่งให้ \"บล็อกแค่การเข้าเว็บ (HTTP) แต่ยังให้ Ping หากันได้\" หากเราใช้ Standard ACL คือการ \"บล็อกทุกอย่างแบบเบ็ดเสร็จ\" จาก IP ต้นทางนั้น\n3. **จัดการกฎยาก (ในรูปแบบ Numbered):** โดยปกติถ้าระบุเป็นตัวเลขแล้วพิมพ์เรียงกันลงไป หากต้องการแก้ไข แทรกกฎ หรือลบแค่บางบรรทัด มักจะทำได้ยาก (ถ้าเป็น IOS เก่าๆ อาจต้องลบทั้ง ACL แล้วพิมพ์ใหม่ทั้งหมด) *แม้ว่าปัจจุบันจะใช้วิธี Sequence Number เข้ามาช่วยได้ก็ตาม*\n\n---\n\n### สรุปตัวอย่างรูปแบบคำสั่งใน Lab\n**1. การสร้างกฎ (Global Configuration Mode):**\n```text\nRouter(config)# access-list 10 deny 192.168.1.100 0.0.0.0  (บล็อก Host เดียว)\nRouter(config)# access-list 10 permit 192.168.1.0 0.0.0.255 (อนุญาตทั้งวง Network 192.168.1.0/24)\n```\n*(หมายเหตุ: ต้องใช้ Wildcard Mask แทน Subnet Mask)*\n\n**2. การนำกฎไปผูกกับ Interface:**\n```text\nRouter(config)# interface GigabitEthernet0/1\nRouter(config-if)# ip access-group 10 out\n```\n*(แปลว่า: นำกฎเบอร์ 10 ไปบังคับใช้กับข้อมูลที่กำลังจะส่ง \"ออก\" ทางพอร์ต GigabitEthernet0/1)*"
+        }
+      ],
+      "timestamp": "2026-05-18T04:36:57.735Z"
+    },
+    {
+      "id": "99a9f547-f65c-4fde-acc1-289a37f953bd",
+      "role": "user",
+      "content": [
+        {
+          "type": "text_with_context",
+          "text": "เขียนลงในไฟล์นี้เลย",
+          "autoMentionContext": {
+            "noteName": "LAB 28 - Configuring Standard Numbered ACL",
+            "notePath": "CCNA Zero-to-Hero/LAB 28 - Configuring Standard Numbered ACL.md"
+          }
+        }
+      ],
+      "timestamp": "2026-05-18T04:43:16.031Z"
+    },
+    {
+      "id": "cbe7131a-39dd-435a-b108-cb2e143cbde8",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "agent_thought",
+          "text": "**Writing Configuration Details**\nI'm now focused on documenting the specific network commands and configurations from my analysis. My aim is to accurately record these steps to facilitate their implementation and review.**Documenting Network Configurations**\nI'm preparing to record the specific commands and configurations identified during the network analysis. My next step is to ensure these details are accurately documented for future reference and implementation.**Saving Configuration Data**\nI am proceeding to save the documented network configurations into the designated file, ensuring all previous content is preserved. My goal is to accurately append the new information for a complete record.**Writing Configuration Data**\nI'm now preparing to write the accumulated configuration details into the document. My objective is to ensure the new content is correctly appended below the existing image links, preserving the integrity of the file.**Appending Configuration Data**\nI'm now meticulously writing the consolidated network configurations into the file. My immediate task is to append this new content directly beneath the existing image links, ensuring a seamless integration.**Writing Configuration Data**\nI'm now preparing to write the accumulated configuration details into the document. My objective is to ensure the new content is correctly appended below the existing image links, preserving the integrity of the file.**Writing Configuration Data**\nI am preparing to write the accumulated configuration details into the document. My objective is to ensure the new content is correctly appended below the existing image links, preserving the integrity of the file.**Writing Configuration Data**\nI'm preparing to write the accumulated configuration details into the document. My objective is to ensure the new content is correctly appended below the existing image links, preserving the integrity of the file.**Writing Configuration Data**\nI'm preparing to write the accumulated configuration details into the document. My objective is to ensure the new content is correctly appended below the existing image links, preserving the integrity of the file.**Writing Configuration Data**\nI'm preparing to write the accumulated configuration details into the document. My objective is to ensure the new content is correctly appended below the existing image links, preserving the integrity of the file."
+        }
+      ],
+      "timestamp": "2026-05-18T04:43:19.537Z"
+    },
+    {
+      "id": "c9f0c8f6-35e3-4eb9-8c4d-921297dc1642",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "update_topic_1779079420776_0",
+          "title": "Update topic to: \"Writing Summary to LAB 28 File\"",
+          "status": "completed",
+          "kind": "think",
+          "content": [],
+          "locations": []
+        }
+      ],
+      "timestamp": "2026-05-18T04:43:41.448Z"
+    },
+    {
+      "id": "598cbb63-dcc6-4bfb-8122-5029d819ebc9",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "write_file_1779079421437_1",
+          "title": "Writing to CCNA Zero-to-Her... Numbered ACL.md",
+          "status": "completed",
+          "kind": "edit",
+          "content": [
+            {
+              "type": "diff",
+              "path": "C:\\Users\\thann\\Desktop\\MyProject\\CCNA\\Network\\CCNA Zero-to-Hero\\LAB 28 - Configuring Standard Numbered ACL.md",
+              "newText": "![[Pasted image 20260518101251.png]]\n\n![[Pasted image 20260518100904.png]]\n\n![[Pasted image 20260518100934.png]]\n\n![[Pasted image 20260518105753.png]]\n\n![[Pasted image 20260518105839.png]]\n\n![[Pasted image 20260518105852.png]]\n\n![[Pasted image 20260518105907.png]]\n\n![[Pasted image 20260518110004.png]]\n\n---\n\n### สรุปความรู้: LAB 28 - Configuring Standard Numbered ACL\n\n#### 1. Standard Numbered ACL คืออะไร?\n**Access Control List (ACL)** คือชุดของคำสั่ง (Rules/Policies) ที่สร้างขึ้นบน Router หรือ Layer 3 Switch เพื่อทำหน้าที่เป็นเหมือน \"ยามรักษาความปลอดภัย\" คอยคัดกรองแพ็กเก็ตข้อมูล (Traffic) ที่วิ่งเข้าหรือออกจากอุปกรณ์ ว่าจะ **อนุญาต (Permit)** หรือ **ปฏิเสธ (Deny)**\n\n**Standard Numbered ACL** เป็นประเภทพื้นฐานและเรียบง่ายที่สุดของ ACL โดยมีลักษณะเฉพาะดังนี้:\n*   **ใช้หมายเลขกำกับ:** ใช้หมายเลขตั้งแต่ **1 ถึง 99** (และช่วงขยาย 1300-1999) \n*   **ตรวจสอบแค่ IP ต้นทาง (Source IP Address) เท่านั้น:** กฎนี้จะสนใจแค่ว่า \"ใครเป็นคนส่งข้อมูลมา\" แต่จะไม่สนว่า \"จะส่งไปหาใคร (Destination)\" หรือ \"ใช้บริการ/พอร์ตอะไร (Protocol/Port)\" \n\n#### 2. หลักการทำงาน (How it works)\n*   **Top-Down Processing (ประมวลผลจากบนลงล่าง):** เมื่อแพ็กเก็ตวิ่งเข้ามา Router จะตรวจสอบเงื่อนไขใน ACL ทีละบรรทัดจากบนลงล่าง หากแพ็กเก็ตตรงกับเงื่อนไขบรรทัดใด Router จะทำตามคำสั่ง (Permit หรือ Deny) ทันที แล้ว**หยุดอ่านบรรทัดถัดไป**\n*   **Implicit Deny Any (กฎปฏิเสธทุกสิ่งในตอนท้าย):** ในบรรทัดสุดท้ายของทุก ACL จะมีกฎล่องหนซ่อนอยู่เสมอ คือ \"ถ้าไม่ตรงกับกฎข้อใดเลยข้างบน ให้ปฏิเสธ (ทิ้ง) แพ็กเก็ตนี้ซะ\" ดังนั้นหากสร้าง ACL ขึ้นมา ต้องมีคำสั่ง Permit อย่างน้อย 1 บรรทัดเสมอ ไม่เช่นนั้นทุกอย่างจะถูกบล็อกหมด\n*   **ตำแหน่งการวางที่ดีที่สุด (Placement):** ตาม Best Practice ของ Cisco การติดตั้ง Standard ACL ควรจะนำไปผูกกับ Interface ที่อยู่ **\"ใกล้กับจุดหมายปลายทาง (Destination) มากที่สุด\"** (เพราะถ้าเอาไปวางใกล้ต้นทาง ต้นทางนั้นจะถูกบล็อกไม่ให้ไปหาเครือข่ายอื่นๆ ทั้งหมดเลย เนื่องจากมันระบุปลายทางไม่ได้)\n*   **Direction (ทิศทางการกรอง):** ต้องเลือกว่าจะดักจับข้อมูล **ขาเข้า (In)** หรือ **ขาออก (Out)** ของ Interface นั้นๆ\n\n#### 3. ประโยชน์ (Benefits)\n1. **ตั้งค่าได้ง่ายและรวดเร็ว:** เนื่องจากรูปแบบคำสั่งไม่ซับซ้อน (ไม่ต้องระบุ Destination IP หรือ Port) เหมาะสำหรับการบล็อกหรืออนุญาตแบบเหมาเข่ง (Host หรือ Subnet)\n2. **ประหยัดทรัพยากร (Low Overhead):** Router ใช้ CPU และ Memory น้อยในการประมวลผล เพราะตรวจสอบแค่เพียงฟิลด์ Source IP ใน IP Header เท่านั้น\n3. **จัดการทราฟฟิกและเพิ่มความปลอดภัยเบื้องต้น:** สามารถใช้ป้องกันเครือข่ายภายในไม่ให้ถูกเข้าถึงจาก IP หรือ เครือข่ายที่ไม่ได้รับอนุญาต หรือใช้คัดกรองว่า IP ใดสามารถ Remote เข้ามาจัดการ Router ผ่าน Telnet/SSH (VTY lines) ได้บ้าง\n\n#### 4. ผลเสียและข้อจำกัด (Drawbacks / Limitations)\n1. **ขาดความยืดหยุ่นและความละเอียด (Lack of Granularity):** นี่คือข้อเสียที่ใหญ่ที่สุด เพราะมันไม่สามารถระบุ IP ปลายทางได้ หากวาง ACL ผิดตำแหน่ง อาจส่งผลให้ Host ต้นทางไม่สามารถติดต่อกับเครือข่ายอื่นที่ควรจะติดต่อได้ (Collateral damage)\n2. **บล็อกเป็นราย Service/Protocol ไม่ได้:** ไม่สามารถเลือกบล็อกเฉพาะบางแอปพลิเคชันได้ เช่น ไม่สามารถสั่งให้ \"บล็อกแค่การเข้าเว็บ (HTTP) แต่ยังให้ Ping หากันได้\" หากเราใช้ Standard ACL คือการ \"บล็อกทุกอย่างแบบเบ็ดเสร็จ\" จาก IP ต้นทางนั้น\n3. **จัดการกฎยาก (ในรูปแบบ Numbered):** โดยปกติถ้าระบุเป็นตัวเลขแล้วพิมพ์เรียงกันลงไป หากต้องการแก้ไข แทรกกฎ หรือลบแค่บางบรรทัด มักจะทำได้ยาก (ถ้าเป็น IOS เก่าๆ อาจต้องลบทั้ง ACL แล้วพิมพ์ใหม่ทั้งหมด) *แม้ว่าปัจจุบันจะใช้วิธี Sequence Number เข้ามาช่วยได้ก็ตาม*\n\n#### สรุปตัวอย่างรูปแบบคำสั่งใน Lab\n**1. การสร้างกฎ (Global Configuration Mode):**\n```text\nRouter(config)# access-list 10 deny 192.168.1.100 0.0.0.0  (บล็อก Host เดียว)\nRouter(config)# access-list 10 permit 192.168.1.0 0.0.0.255 (อนุญาตทั้งวง Network 192.168.1.0/24)\n```\n*(หมายเหตุ: ต้องใช้ Wildcard Mask แทน Subnet Mask)*\n\n**2. การนำกฎไปผูกกับ Interface:**\n```text\nRouter(config)# interface GigabitEthernet0/1\nRouter(config-if)# ip access-group 10 out\n```\n*(แปลว่า: นำกฎเบอร์ 10 ไปบังคับใช้กับข้อมูลที่กำลังจะส่ง \"ออก\" ทางพอร์ต GigabitEthernet0/1)*\n",
+              "oldText": "![[Pasted image 20260518101251.png]]\n\n![[Pasted image 20260518100904.png]]\n\n![[Pasted image 20260518100934.png]]\n\n![[Pasted image 20260518105753.png]]\n\n![[Pasted image 20260518105839.png]]\n\n![[Pasted image 20260518105852.png]]\n\n![[Pasted image 20260518105907.png]]\n\n![[Pasted image 20260518110004.png]]\n"
+            }
+          ],
+          "locations": [
+            {
+              "path": "C:\\Users\\thann\\Desktop\\MyProject\\CCNA\\Network\\CCNA Zero-to-Hero\\LAB 28 - Configuring Standard Numbered ACL.md"
+            }
+          ]
+        },
+        {
+          "type": "agent_thought",
+          "text": "**Analyzing Text for Key Information**\nI am currently processing the provided text, focusing on extracting the core arguments and supporting evidence. My aim is to identify the central thesis and any counterpoints presented. I am also evaluating the logical flow of the text to understand how the author constructs their case. This analysis will help me formulate a concise and accurate summary of the content.**Completing File Write**\nI've successfully written the generated summary and image links into the specified markdown file. The task is now complete."
+        },
+        {
+          "type": "text",
+          "text": "ผมได้ทำการเขียนเนื้อหาสรุปทั้งหมดลงในไฟล์ `LAB 28 - Configuring Standard Numbered ACL.md` ต่อท้ายรูปภาพเดิมเรียบร้อยแล้วครับ สามารถเปิดดูใน Obsidian ได้เลยครับ หากต้องการปรับแก้หรือเพิ่มเติมส่วนไหนบอกได้นะครับ"
+        }
+      ],
+      "timestamp": "2026-05-18T04:43:41.474Z"
+    }
+  ],
+  "savedAt": "2026-05-18T04:43:46.583Z"
+}

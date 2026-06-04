@@ -1,13 +1,13 @@
 # CCNA Homework LAB-X09: Dynamic Trunking Protocol (DTP)
 
 **รูปที่ 1:** แผนผังเครือข่ายและการกำหนดโหมด DTP
-![[Pasted image 20260424134353.png]]
+![](Image/Pasted%20image%2020260424134353.png)
 
 **รูปที่ 2:** คำสั่งการตั้งค่าในแต่ละ Task
-![[Pasted image 20260424134336.png]]
+![](Image/Pasted%20image%2020260424134336.png)
 
 **รูปที่ 3:** ตรวจสอบสถานะด้วยคำสั่ง show interfaces switchport
-![[Pasted image 20260424134428.png]]
+![](Image/Pasted%20image%2020260424134428.png)
 
 ---
 
@@ -28,3 +28,12 @@
     - ถ้าฝั่งหนึ่งส่ง **Desirable** และอีกฝั่งเป็น **Auto** -> ทั้งคู่จะตกลงกันและเปลี่ยนสถานะพอร์ตเป็น **Trunk**
     - ถ้าเป็น **Auto** ทั้งคู่ -> ต่างคนต่างรอให้คนอื่นร้องขอ ผลคือจะเป็นแค่ **Access** (ไม่เกิด Trunk)
 - **Nonegotiate:** เมื่อใช้คำสั่งนี้ Switch จะเลิกส่ง DTP Packet อย่างเด็ดขาด
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** พอร์ตไม่ยอมเป็น Trunk ทั้งที่เสียบสายระหว่าง Switch แล้ว
+- **Solution:** ตรวจสอบโหมด DTP ของทั้งสองฝั่ง (ถ้าเป็น Auto ทั้งคู่จะไม่เป็น Trunk) ให้แก้ฝั่งใดฝั่งหนึ่งเป็น `dynamic desirable` หรือ `trunk`
+- **Verification:**
+    - ใช้คำสั่ง `show interfaces switchport` เพื่อดูค่า **Administrative Mode** (โหมดที่เราตั้ง) และ **Operational Mode** (โหมดที่ทำงานจริง)
+    - ตรวจสอบว่าสถานะการเจรจา (Negotiation of Trunking) เป็น On หรือ Off ตามที่เราต้องการไหม

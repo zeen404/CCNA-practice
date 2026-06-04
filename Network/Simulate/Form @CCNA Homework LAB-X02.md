@@ -1,19 +1,19 @@
 # CCNA Homework LAB-X02: Password Recovery
 
 **รูปที่ 1:** กระบวนการ Boot ของ Router
-![[Pasted image 20260424103654.png]]
+![](Image/Pasted%20image%2020260424103654.png)
 
 **รูปที่ 2:** การเข้าโหมด ROMMON และข้ามการโหลด Startup Config
-![[Pasted image 20260424103713.png]]
+![](Image/Pasted%20image%2020260424103713.png)
 
 **รูปที่ 3:** การดึงการตั้งค่าเดิมกลับมา
-![[Pasted image 20260424103735.png]]
+![](Image/Pasted%20image%2020260424103735.png)
 
 **รูปที่ 4:** การตั้งรหัสผ่านใหม่
-![[Pasted image 20260424103754.png]]
+![](Image/Pasted%20image%2020260424103754.png)
 
 **รูปที่ 5:** การคืนค่า Configuration Register และบันทึกการตั้งค่า
-![[Pasted image 20260424103802.png]]
+![](Image/Pasted%20image%2020260424103802.png)
 
 ---
 
@@ -32,3 +32,12 @@
 ### 📨 Packet/Signal Flow
 - **Break Signal:** ระหว่าง Boot การส่งสัญญาณ **Break** (Ctrl+Pause/Break) ผ่านสาย Console จะเป็นการส่งสัญญาณขัดจังหวะ (Interrupt) ไปที่ CPU ของ Router เพื่อสั่งให้หยุดโหลด IOS และกระโดดเข้าสู่โหมด ROMMON ทันที
 - **Bootstrap Process:** ROM -> ROMMON -> Check Config Register -> Load IOS from Flash (or skip) -> Load Config from NVRAM (or skip).
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** ลืมเปลี่ยน Configuration Register กลับเป็น `0x2102` ทำให้ทุกครั้งที่ Restart เครื่อง มันจะข้ามคอนฟิกเดิมเสมอเสมือนเครื่องเปล่า
+- **Solution:** หลังจากแก้รหัสผ่านเสร็จ ต้องใช้คำสั่ง `config-register 0x2102` เสมอ
+- **Verification:**
+    - ใช้คำสั่ง `show version` แล้วเลื่อนลงไปบรรทัดสุดท้าย เพื่อเช็คว่าค่า register เป็น `0x2102` หรือยัง
+    - ลอง `reload` เครื่องดูว่ารหัสผ่านใหม่ที่เราตั้งยังใช้งานได้ปกติหรือไม่

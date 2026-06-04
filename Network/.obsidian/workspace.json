@@ -4,67 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "e56dc8c814d4b960",
+        "id": "d94e1e869ea95f47",
         "type": "tabs",
         "children": [
           {
-            "id": "a0b11ce7c8348aed",
+            "id": "baa544b6480c64af",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "Cyber/WiFi/What is WiFi and How dose it work!.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "What is WiFi and How dose it work!"
-            }
-          },
-          {
-            "id": "21934aee59aeeede",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cyber/WiFi/WiFi Hot spots.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "WiFi Hot spots"
-            }
-          },
-          {
-            "id": "8aca216bcf4979a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cyber/WiFi/Building a Wireless Network.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Building a Wireless Network"
-            }
-          },
-          {
-            "id": "131fce0da34e6877",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Simulate/Form @CCNA Homework LAB-X01.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Form @CCNA Homework LAB-X01"
+              "icon": "lucide-table",
+              "title": "Untitled"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -137,8 +93,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Simulate/Form @CCNA Homework LAB-X01.md",
-                "collapseAll": false,
+                "file": "CCNA Zero-to-Hero/LAB 28 - Configuring Standard Numbered ACL.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -147,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Form @CCNA Homework LAB-X01"
+              "title": "Backlinks for LAB 28 - Configuring Standard Numbered ACL"
             }
           },
           {
@@ -216,12 +172,35 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "da7b7d9d602c473c",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          },
+          {
+            "id": "3d5dfa3258843233",
+            "type": "leaf",
+            "state": {
+              "type": "agent-client-chat-view",
+              "state": {
+                "initialAgentId": "codex-acp"
+              },
+              "icon": "bot-message-square",
+              "title": "Agent client"
+            }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 350.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -233,58 +212,63 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "terminal:Open terminal": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "realclaudian:Open Claudian": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "agent-client:Open agent client": false
     }
   },
-  "active": "131fce0da34e6877",
+  "active": "baa544b6480c64af",
   "lastOpenFiles": [
-    "Cyber/Firewall/Firewall.md",
-    "Cyber/IMG/Pasted image 20260506134741.png",
-    "Cyber/IMG/OFDM_Signal_-_Freq-Time_Representation_12-11-23_email_hero_2.webp",
-    "Cyber/WiFi/WiFi Hot spots.md",
-    "Cyber/Firewall",
-    "Cyber/WiFi/What is WiFi and How dose it work!.md",
-    "OSI model.canvas",
-    "Cyber/WiFi/Building a Wireless Network.md",
-    "Simulate/Form @CCNA Homework LAB-X05.md",
-    "Simulate/Form @CCNA Homework LAB-X06.md",
-    "Simulate/Form @CCNA Homework LAB-X04.md",
-    "Simulate/Form @CCNA Homework LAB-X03.md",
-    "Simulate/Form @CCNA Homework LAB-X02.md",
-    "Simulate/Form @CCNA Homework LAB-X01.md",
-    "Homework.canvas",
-    "Cyber/Near Field Communication/Near Field Communication.md",
-    "Cyber/Near Field Communication",
-    "Cyber/Untitled",
-    "Cyber/IMG/Dipole_xmting_antenna_animation_4_408x318x150ms.gif",
-    "Cyber/IMG/Pasted image 20260505104213.jpg",
-    "Cyber/IMG/Pasted image 20260505104155.jpg",
-    "Cyber/IMG/Pasted image 20260505103512.png",
-    "Cyber/NIST/NIST CSF.md",
-    "Cyber/WiFi",
-    "Cyber/NIST/NIST CSF.canvas",
-    "Cyber/ISO 27001/ISO 127001.md",
-    "Cyber/ISO 27001/ISO 127001.canvas",
-    "Cyber/IMG/Pasted image 20260430131800.png",
-    "Cyber/IMG",
-    "Cyber/IMG/Pasted image 20260430131519.png",
-    "Cyber/NIST",
-    "Cyber/ISO 27001",
-    "Cyber",
+    "CCNA Zero-to-Hero/Lab 31-Configuring_Extended_Named_ACL.md",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153909.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153844.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153827.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153805.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153739.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153708.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518153644.png",
+    "Pasted image 20260518153602.png",
+    "CCNA Zero-to-Hero/Lab 30-Configuring_Extended_Numbered_ACL.md",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518150927.png",
+    "CCNA Zero-to-Hero/images/Pasted image 20260518150841.png",
+    "CCNA Zero-to-Hero/Lab 29 – Configuring Standard Named ACL.md",
+    "CCNA Zero-to-Hero/LAB 28 - Configuring Standard Numbered ACL.md",
+    "CCNA Zero-to-Hero/images",
     "CCNA/Network Layers.md",
-    "CCNA/Data Frame.md",
-    "CCNA/Image/Pasted image 20260424101548.png",
     "Untitled.base",
-    "CCNA/Image/Pasted image 20260424153009.png",
-    "2026-04-24.md",
-    "Network/CCNA/Network Layers.md",
-    "Network/CCNA",
+    "Homework.canvas",
+    "Simulate/Form @CCNA Homework LAB-X31.md",
+    "CCNA Zero-to-Hero",
     "Simulate/Form @CCNA Homework LAB-X10.md",
-    "Simulate/Form @CCNA Homework LAB-X09.md",
-    "Simulate/Form @CCNA Homework LAB-X08.md",
-    "Simulate/Form @CCNA Homework LAB-X07.md",
-    "Simulate/Form @CCNA Homework.md",
-    "Welcome.md",
-    "create a link.md"
+    "Simulate/Form @CCNA Homework LAB-X13.md",
+    "Simulate/Form @CCNA Homework LAB-X15.md",
+    "Simulate/Form @CCNA Homework LAB-X17.md",
+    "Simulate/Form @CCNA Homework LAB-X28.md",
+    "CCNA/Data Frame.md",
+    "OSI model.canvas",
+    "Training.md",
+    "Simulate/Form @CCNA Homework LAB-X30.md",
+    "Simulate/Form @CCNA Homework LAB-X29.md",
+    "Simulate/31.md",
+    "Simulate/30.md",
+    "Simulate/29.md",
+    "Simulate/28.md",
+    "Simulate/Form @CCNA Homework LAB-X26.md",
+    "Simulate/Form @CCNA Homework LAB-X27.md",
+    "Simulate/Form @CCNA Homework LAB-X25.md",
+    "Simulate/Form @CCNA Homework LAB-X24.md",
+    "Simulate/Form @CCNA Homework LAB-X23.md",
+    "Simulate/Form @CCNA Homework LAB-X22.md",
+    "CCNA/Cyber/Firewall",
+    "CCNA/Cyber/Near Field Communication",
+    "Cyber/Untitled",
+    "CCNA/Cyber/WiFi",
+    "CCNA/Cyber/NIST/NIST CSF.canvas",
+    "CCNA/Cyber/ISO 27001/ISO 127001.canvas",
+    "CCNA/Cyber/IMG",
+    "CCNA/Cyber/NIST",
+    "CCNA/Cyber/ISO 27001"
   ]
 }

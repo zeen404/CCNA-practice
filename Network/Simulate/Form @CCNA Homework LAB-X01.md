@@ -1,28 +1,28 @@
 # CCNA Homework LAB-X01: Basic Configuration
 
 **รูปที่ 1:** การตั้งชื่อ Router
-![[Pasted image 20260424102201.png]]
+![](Image/Pasted%20image%2020260424102201.png)
 
 > [!note] ⚙️ การตั้งชื่อ Router
 > เป็นการเข้าสู่โหมดการตั้งค่า (Configuration Mode) และทำการเปลี่ยนชื่อของ Router จากค่าเริ่มต้นเป็น **"R1"** ด้วยคำสั่ง `hostname R1`
 
 **รูปที่ 2:** การตั้งรหัสผ่าน Enable
-![[Pasted image 20260424102346.png]]
+![](Image/Pasted%20image%2020260424102346.png)
 
 **รูปที่ 3:** การตั้งรหัสผ่าน Console
-![[Pasted image 20260424102412.png]]
+![](Image/Pasted%20image%2020260424102412.png)
 
 **รูปที่ 4:** การตั้งรหัสผ่าน VTY (Telnet/SSH)
-![[Pasted image 20260424102426.png]]
+![](Image/Pasted%20image%2020260424102426.png)
 
 **รูปที่ 5:** การตั้งค่าข้อความประกาศ (Banner MOTD)
-![[Pasted image 20260424102440.png]]
+![](Image/Pasted%20image%2020260424102440.png)
 
 **รูปที่ 6:** การกำหนด IP Address ให้อินเทอร์เฟซ
-![[Pasted image 20260424102450.png]]
+![](Image/Pasted%20image%2020260424102450.png)
 
 **รูปที่ 7:** การตั้งค่า Default Gateway ให้กับ Switch
-![[Pasted image 20260424102528.png]]
+![](Image/Pasted%20image%2020260424102528.png)
 
 ---
 
@@ -44,3 +44,13 @@
 ### 📨 Packet Flow
 - **Local Console:** ข้อมูลวิ่งเป็นสัญญาณ Serial (Bits) ไม่ผ่าน Protocol Stack ของ Network
 - **VTY (Telnet):** ข้อมูลถูกห่อหุ้มด้วย **TCP Port 23** เมื่อ Admin พิมพ์ตัวอักษร 1 ตัว จะเกิดการส่ง 1 Packet ไปที่ Router และ Router จะส่ง Packet นั้นกลับมาแสดงผลที่หน้าจอ Admin (Echo) เพื่อยืนยันว่าได้รับข้อมูลแล้ว
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** ลืมใช้คำสั่ง `copy running-config startup-config` ทำให้เวลาปิด-เปิดเครื่องใหม่ การตั้งค่าทั้งหมดหายไป
+- **Solution:** ฝึกให้เป็นนิสัยว่าหลังจากคอนฟิกเสร็จแล้ว ต้องบันทึกเสมอด้วยคำสั่ง `copy run start` หรือ `write`
+- **Verification:**
+    - ใช้คำสั่ง `show running-config` เพื่อตรวจสอบว่าคำสั่งที่พิมพ์ไปถูกต้องหรือไม่
+    - ทดสอบการเข้าถึงจากเครื่องอื่นผ่าน Telnet เพื่อเช็ค VTY Password
+    - ลอง `ping` จาก PC ไปยัง Gateway เพื่อเช็ค IP Connectivity เบื้องต้น

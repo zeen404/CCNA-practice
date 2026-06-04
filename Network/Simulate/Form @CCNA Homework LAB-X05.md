@@ -1,22 +1,22 @@
 # CCNA Homework LAB-X05: MAC Address Table
 
 **รูปที่ 1:** โครงสร้างเครือข่าย (Topology)
-![[Pasted image 20260424112136.png]]
+![](Image/Pasted%20image%2020260424112136.png)
 
 **รูปที่ 2:** การทดสอบ Ping จาก PC0 ไปยัง PC1
-![[Pasted image 20260424112305.png]]
+![](Image/Pasted%20image%2020260424112305.png)
 
 **รูปที่ 3:** การตรวจสอบตาราง MAC Address บน SW1 (Switch0)
-![[Pasted image 20260424112226.png]]
+![](Image/Pasted%20image%2020260424112226.png)
 
 **รูปที่ 4:** การทดสอบ Ping ข้าม Switch (PC1 ไปยัง PC3)
-![[Pasted image 20260424112452.png]]
+![](Image/Pasted%20image%2020260424112452.png)
 
 **รูปที่ 5:** ตาราง MAC Address ของ SW1 หลังจากการ Ping ข้าม Switch
-![[Pasted image 20260424112556.png]]
+![](Image/Pasted%20image%2020260424112556.png)
 
 **รูปที่ 6:** ตาราง MAC Address ของ SW2 (Switch1) หลังจากการ Ping ข้าม Switch
-![[Pasted image 20260424112710.png]]
+![](Image/Pasted%20image%2020260424112710.png)
 
 ---
 
@@ -37,3 +37,12 @@
 2. **Flooding:** Switch รับเฟรม Broadcast และส่งออกทุกพอร์ต (Flooding) เพื่อตามหาเจ้าของ IP นั้น
 3. **Table Building:** ทันทีที่ PC1 ตอบกลับ Switch จะเห็น Source MAC ของ PC1 และบันทึกลงตารางทันที
 4. **Unicast Delivery:** การ Ping ครั้งถัดไป Switch จะไม่ Flood อีกแล้ว แต่จะส่งเป็น **Unicast** ตรงไปยังพอร์ตปลายทางโดยตรง (Forwarding)
+
+---
+
+### 🛠️ Troubleshooting & Verification
+- **Common Problem:** ตาราง MAC Address ว่างเปล่า ทั้งที่มีเครื่องต่ออยู่
+- **Solution:** Switch จะเรียนรู้ MAC ก็ต่อเมื่อ "มีข้อมูลวิ่งผ่าน" เท่านั้น ให้ลองสั่ง `ping` จากเครื่องลูกข่ายเพื่อให้เกิด Traffic แล้วตารางจะอัปเดตเอง
+- **Verification:**
+    - ใช้คำสั่ง `show mac address-table` เพื่อดูตารางทั้งหมด
+    - ตรวจสอบว่า MAC ของ PC ปลายทาง ไปโผล่ในพอร์ตที่ถูกต้องหรือไม่ (ถ้าโผล่ผิดพอร์ต อาจมีปัญหาเรื่องการเสียบสายผิดหรือ Loop)

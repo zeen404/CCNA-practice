@@ -1,9 +1,12 @@
 
-![[Pasted image 20260424101548.png]]
+![](Image/Pasted%20image%2020260424101548.png)
 
-![[Pasted image 20260424101638.png]]
+
+![](Image/Pasted%20image%2020260424101638.png)
+
+![](../Simulate/Image/OSI-Model.gif)
 ### **Layer 7: Application Layer (ชั้นประยุกต์)**
-(รายละเอียดเพิ่มเติม: [[Data Frame#Layer 7 ถึง Layer 5: Data (ข้อมูลแอปพลิเคชัน)|Encapsulation]])
+(รายละเอียดเพิ่มเติม: [Encapsulation](Data%20Frame.md#Layer%207%20ถึง%20Layer%205:%20Data%20(ข้อมูลแอปพลิเคชัน)))
 
 เป็นชั้นที่อยู่ใกล้ตัวผู้ใช้มากที่สุด คือส่วนที่ซอฟต์แวร์หรือแอปพลิเคชันใช้ในการส่งผ่านข้อมูลบนเครือข่าย
 
@@ -11,7 +14,7 @@
 - **ตัวอย่าง:** HTTP (Web), FTP (File Transfer), SMTP (Email), DNS
 
 ### **Layer 6: Presentation Layer (ชั้นนำเสนอข้อมูล)**
-(รายละเอียดเพิ่มเติม: [[Data Frame#Layer 7 ถึง Layer 5: Data (ข้อมูลแอปพลิเคชัน)|Encapsulation]])
+(รายละเอียดเพิ่มเติม: [Encapsulation](Data%20Frame.md#Layer%207%20ถึง%20Layer%205:%20Data%20(ข้อมูลแอปพลิเคชัน)))
 
 ทำหน้าที่เหมือน "ล่าม" หรือคนแปลภาษา เพื่อให้แน่ใจว่าข้อมูลที่ส่งมาจากชั้นบนมีรูปแบบที่เครื่องปลายทางเข้าใจ
 
@@ -19,7 +22,7 @@
 - **ตัวอย่าง:** JPEG, MP4, GIF, SSL/TLS (การเข้ารหัส)
 
 ### **Layer 5: Session Layer (ชั้นเซสชัน)**
-(รายละเอียดเพิ่มเติม: [[Data Frame#Layer 7 ถึง Layer 5: Data (ข้อมูลแอปพลิเคชัน)|Encapsulation]])
+(รายละเอียดเพิ่มเติม: [Encapsulation](Data%20Frame.md#Layer%207%20ถึง%20Layer%205:%20Data%20(ข้อมูลแอปพลิเคชัน)))
 
 มีหน้าที่ควบคุมการเชื่อมต่อ (Session) ระหว่างเครื่องต้นทางและปลายทาง
 
@@ -27,7 +30,7 @@
 - **ตัวอย่าง:** NetBIOS, RPC, การควบคุมการสนทนาในแอปแชท
 
 ### **Layer 4: Transport Layer (ชั้นขนส่ง)**
-(หน่วยข้อมูล: [[Data Frame#Layer 4: Transport Layer -> Segment / Datagram|Segment / Datagram]])
+(หน่วยข้อมูล: [Segment / Datagram](Data%20Frame.md#Layer%204:%20Transport%20Layer%20->%20Segment%20/%20Datagram))
 
 เป็นชั้นที่ดูแลความสมบูรณ์ของการส่งข้อมูลจากจุดหนึ่งไปยังอีกจุดหนึ่ง (End-to-End)
 
@@ -35,7 +38,7 @@
 - **ตัวอย่าง:** **TCP** (เน้นความถูกต้อง ส่งซ้ำได้) และ **UDP** (เน้นความเร็ว เช่น การคอลวิดีโอ)
 
 ### **Layer 3: Network Layer (ชั้นเครือข่าย)**
-(หน่วยข้อมูล: [[Data Frame#Layer 3: Network Layer -> Packet|Packet]])
+(หน่วยข้อมูล: [Packet](Data%20Frame.md#Layer%203:%20Network%20Layer%20->%20Packet))
 
 ทำหน้าที่หาเส้นทางที่เหมาะสมที่สุดเพื่อให้ข้อมูลไปถึงจุดหมาย (Routing)
 
@@ -44,7 +47,7 @@
 - **อุปกรณ์:** **Router**
 
 ### **Layer 2: Data Link Layer (ชั้นเชื่อมโยงข้อมูล)**
-(หน่วยข้อมูล: [[Data Frame#Layer 2: Data Link Layer -> Ethernet Frame|Ethernet Frame]])
+(หน่วยข้อมูล: [Ethernet Frame](Data%20Frame.md#Layer%202:%20Data%20Link%20Layer%20->%20Ethernet%20Frame))
 
 ทำหน้าที่รับผิดชอบการส่งข้อมูลระหว่างอุปกรณ์ที่อยู่ในเครือข่ายเดียวกัน (Local Network)
 
@@ -53,7 +56,7 @@
 - **อุปกรณ์:** **Switch**, Bridge
 
 ### **Layer 1: Physical Layer (ชั้นกายภาพ)**
-(หน่วยข้อมูล: [[Data Frame#Layer 1: Physical Layer -> Bits|Bits]])
+(หน่วยข้อมูล: [Bits](Data%20Frame.md#Layer%201:%20Physical%20Layer%20->%20Bits))
 
 เป็นชั้นที่ว่าด้วยเรื่องฮาร์ดแวร์และสัญญาณไฟฟ้าดิบๆ ที่วิ่งผ่านสาย
 
